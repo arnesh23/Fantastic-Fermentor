@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     timeUnits: DataTypes.STRING,
     cookingHardware: DataTypes.STRING,
     duration: DataTypes.INTEGER
+    
   }, {});
   tasks.associate = function(models) {
     // associations can be defined here
