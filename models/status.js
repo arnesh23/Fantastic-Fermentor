@@ -5,6 +5,9 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   status.associate = function(models) {
     // associations can be defined here
+    status.hasMany(models.projects, {
+      onDelete: "cascade"
+    });
   };
   return status;
 };
