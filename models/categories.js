@@ -5,6 +5,10 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   categories.associate = function(models) {
     // associations can be defined here
+
+    categories.hasMany(models.projects, {
+      onDelete: "cascade"
+    });
   };
   return categories;
 };

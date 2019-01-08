@@ -7,6 +7,28 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   projects.associate = function(models) {
     // associations can be defined here
+
+    projects.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+
+    projects.belongsTo(models.categories, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+
+    projects.belongsTo(models.status, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+
+    projects.hasMany(models.tasks, {
+      onDelete: "cascade"
+    });
   };
   return projects;
 };

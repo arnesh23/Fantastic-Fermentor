@@ -12,6 +12,12 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   tasks.associate = function(models) {
     // associations can be defined here
+
+    tasks.belongsTo(models.projects, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
   };
   return tasks;
 };
