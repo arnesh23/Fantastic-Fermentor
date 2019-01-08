@@ -19,8 +19,5 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/Register.html"));
   });
 
-  app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/Register.html"));
-  });
   
 };
