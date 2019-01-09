@@ -8,7 +8,9 @@ module.exports = (sequelize, DataTypes) => {
     timeSinceLastStep: DataTypes.STRING,
     timeUnits: DataTypes.STRING,
     cookingHardware: DataTypes.STRING,
-    duration: DataTypes.INTEGER
+    duration: DataTypes.INTEGER,
+    ingredients: DataTypes.STRING,
+    steps:DataTypes.STRING
     
   }, {});
   tasks.associate = function(models) {
