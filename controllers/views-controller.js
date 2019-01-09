@@ -5,5 +5,5 @@ router.get('/', (req, res) => res.render('home', { user: req.user }));
 
 router.get('/register', (req, res) => res.render('home', { user: req.user }));
 
-router.get('/detail', (req, res) => res.render('detail', { user: req.user }));
+router.get('/task', (req, res) => res.render('task', { user: req.user }));
 module.exports = router;
