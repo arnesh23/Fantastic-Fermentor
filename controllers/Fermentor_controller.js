@@ -9,25 +9,29 @@ module.exports = function(app){
     app.get("/new", function(req, res) { 
       // console.log("api/posts/user"+req.body)
        db.categories.findAll({}).then(function(categoriesDB){
-           console.log("categories"+categoriesDB);
+          // console.log("categories"+categoriesDB);
+         //  res.render("NewProjectPage", {categories: categoriesDB},)
 
-           res.render("NewProjectPage", {categories: categoriesDB},)
+         db.projects.findAll({
+            // include: [db.categories]
+         }).then(function(projectsDB){
+          projectsDB = {
+            name: "blah",
+            //instructions: "do this do that",
+            //actions: "null"
+        }
+        
+            //console.log("categories:"+categoriesDB+"projects"+projectsDB)
+              res.render("NewProjectPage", {
+                categories: categoriesDB,
+                projects: projectsDB
+            })
+         })
        }) 
   });
-
-  app.get("/new", function(req, res) { 
-    // console.log("api/posts/user"+req.body)
-     db.categories.projects({}).then(function(projectDB){
-         console.log("categories"+categoriesDB);
-         res.render("NewProjectPage", {categories: categoriesDB})
-     }) 
-});
-
-  
-
-  
-
-
 }
 
 //Controller for second webpage
+
+/*
+  */
