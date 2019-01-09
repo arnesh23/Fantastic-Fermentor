@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
-		<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
-		<title>Fermentor</title>
-		<script src="https://code.jquery.com/jquery.js"></script>
-		<script src="../public/js/Register.js"></script>
-	</head>
-	<body>
-		{{{ body }}}
-	</body>
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<link rel="stylesheet" href="css/main.css" <title>Fermentor</title>
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+	<script src="../public/js/Register.js"></script>
+
+	<script src="js/form.js"></script>
+	<script src="js/main.js"></script>
+</head>
+
+<body>
+	{{#if user}}
+
+	<p>User Name: <strong>{{user.username}} - User ID: {{user.id}}</strong> <a class="logout" href="#">Logout</a></p>
+
+	{{/if}}
+	{{{ body }}}
+</body>
+
 </html>
