@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> ferMentor </title>
+    <link rel="stylesheet" type="text/css" src="css/styles.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Create three equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 10px;
+            height: 300px;
+            /* Should be removed. Only for demonstration */
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page" style="background-color:white; position:relative; width:100%;">
+        <div class="home-page-promo" style="margin:0; padding:0; border:0; vertical-align:baseline;">
+            <nav class="nav-bar" style="background-color:white; padding:20px; margin: 10px;">
+                <section class="top-bar">
+                    <div id="logo" style="display: initial;">
+                        <img src="photos/logo.png" class="auth-image" alt="logo" width="25%" height="35%"
+                            data-pin-nopin="true">
+                    </div>
+                    <div class="flex-expander" style="flex:1; align-items:center;"></div>
+                    <div class="global-search" style="position:static; margin-top: 1em; opasity:1; trasnsform: scale(1); transition:opasity .4s ease;">
+                        <div class="relative-wrapper" style="position:relative; ">
+                            <button class="global-search-button" title="Open Search Modal" aria-label="Open Search Modal"
+                                style="max-width:50px; padding:0; box-shadow: 0 8px 13px 0 rgba (0,0,0, .12), 0 -1px 2px rgba(0,0,0,.05); color:black; overflow:hidden; display:flex; transition: max-width .4 ease; border-radius: 3em; ">
+                                <div class="y-icon spyglass" data-icon="❍" style="padding: 1em; font-size: 1.5em; font-family: y-icon; transform: rotate(90deg);"></div>
+                            </button>
+                        </div>
+                    </div>
+                    <button class="btn-wire top-bar-signin" data-tracking="Sign In" title="Sign in" aria-label="Sign in"
+                        style=" color:sandybrown; margin:25px 40px 40px; transform: translateY(4px); position: relative; text-align:center; border: 3px solid orange; padding: 0 3em; height: 30px; background-color: transparent; display:table-column;">Sign
+                        In</button>
+                </section>
+            </nav>
+
+            <section class="promo-overview nav-section" style="padding:5px; margin:10px; text-align:center;">
+                <div class="nav-content promo-overview-content" style="order:2; display:flex; flex-direction:column; align-items:center; max-width:100%;">
+                    <div class="promo-overview-header" style="color:blueviolet; font-size:18px; letter-spacing:3px; color: #bababa;">
+                        THE ferMentor EXPERIENCE</div>
+                    <h1 class="overview-title nav-title" style="font-size:42px; margin-top:5px; margin-bottom:10px; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color:sandybrown; letter-spacing:2px;">
+                        ferMentor is your electronic fermentation guide</h1>
+                    <p class="promo-overview-description nav-description" style="color:slategray; font-size:1em; line-height:1.5; margin-bottom:25px;">A
+                        list of fermentation recepies and
+                        recommendations just for you to handy tools and helpful step by step guides, ferMentor has
+                        everything you need to become a master at fermenting. </p>
+                    <button class="btn-tertiary promo-cta" data-tracking="CTA1" title="Join Now for Free" aria-label="Join Now for Free"
+                        style="padding: 0 2em; height:60px; color:white; display:inline-block; font-size:35px; border-color:black 3px; background-color:sandybrown; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-bottom:20px; margin-top:50px; ">Join
+                        Now for Free</button>
+                </div>
+            </section>
+            <section class="nav-section feautures-section" style="margin:10px; text-align:center;">
+                <div class="nav-section-image-wrapper onscreen">
+                    <img alt="fermentation" src="photos/ferment2.jpeg" class="features-image-mobile" width="1000px;;"
+                        height="500px;;" data-pin-nopin="true">
+                    <div class="dotted-line"></div>
+
+                </div>
+                <div class="features-content nav-content">
+                    <h2 class="features-overview-title nav-title" style="font-size:37px; padding-bottom:50px; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color:sandybrown; letter-spacing:4px;">Find
+                        the Perfect Recipe</h2>
+                    <h2 class="features-section-title filter-title" style="color:sandybrown; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 44px; letter-spacing:4px; margin-bottom:10px;">Sort
+                        &amp; Filter</h2>
+                        <img src="photos/ferment.jpeg" class="sort-filter" alt="sort-filter" width="40%;" height="20%;" style="text-align:center;">
+                    <p class="features-section-description filter-description" style="color:slategray; font-size:19px; margin-bottom:60px;">ferMentor's
+                        unique search filters allow
+                        you to narrow down your search by fermentation time, categories, diet and more!</p>
+                    <h2 class="features-section-title collection-title" style="color:sandybrown; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size:34px; letter-spacing:3px; margin-bottom:10px;">Collect
+                        Your Favorite Recipes</h2>
+                    <p class="features-section-description collection-description" style="color:slategray; margin-bottom:60px;">Collect,
+                        save and organize your
+                        favorite fermenting guides in your personal profile.</p>
+
+                </div>
+
+            </section>
+            <section class="search-section" style="margin:10px; text-align:center;">
+                <h2 class="search-section-title" style="color:sandybrown; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size:20px; font-size:30px; letter-spacing:3px; margin-bottom:0px;">Search
+                    over 100+ Recipes</h2>
+                <p class="search-section-content" style="color:slategray; margin-bottom:18px;">Search fermenting
+                    recipes, including ferMentors exclusive recipes</p>
+                <div class="search-section-buttons">
+                    <button class="search-section-button active" value="quick" title="Quick" style="background-color:sandybrown;"
+                        aria-label="Quick">Quick &
+                        Easy</button>
+                    <button class="search-section-button" value="longer" title="Longer" style="background-color:sandybrown;"
+                        aria-label="Longer">Longer &
+                        Complicated</button>
+                    <button class="search-section-button" value="craftAl" title="craftAl" style="background-color:sandybrown;"
+                        aria-label="craftAl">Craft
+                        Alcohol</button>
+                    <button class="search-section-button" value="kidFriendly" title="Kid Friendly" style="background-color:sandybrown; margin-bottom:15px;"
+                        aria-label="Kid Friendly">Non-Alcoholic
+                        Crafts</button>
+                </div>
+                <div class="static-recipe-cards">
+                    <div class="static-recipe-card" id="kombucha">
+                        <div class="recipe-details-image">
+                            <div class="class-title" style="color:black;font-size:22px;">Kombucha</div>
+                            <img class="recipe-image" src="photos/kombucha.jpeg" style="width:40%; height:50%;"
+                                data-pin-nopin="true">
+                        </div>
+                        <div class="card-title" style="color:black;font-size:22px;">Sourdough Bread</div>
+                    </div>
+                    <div class="static-recipe-card" id="sourdough">
+                        <div class="recipe-details-image">
+                            <img class="recipe-image" src="photos/sourdough.jpeg" style="width:40%; height:50%;"
+                                data-pin-nopin="true">
+                        </div>
+                        <div class="card-title" style="color:black; font-size:22px;">Yogurt</div>
+                    </div>
+                    <div class="static-recipe-card" id="yogurt">
+                        <div class="recipe-details-image">
+                            <img class="recipe-image" src="photos/yogurt.jpeg" style="width:40%; height:50%;"
+                                data-pin-nopin="true">
+                        </div>
+                        <div class="card-title" style="color:black; font-size: 22px;">Lentils</div>
+                    </div>
+                    <div class="static-recipe-card" id="lentils">
+                        <div class="recipe-details-image">
+                            <img class="recipe-image" src="photos/lentils.jpeg" style="width:40%; height:50%;"
+                                data-pin-nopin="true">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="nav-section plan-section" style="margin:10px; text-align:center;">
+                <div class="plan-content nav-content">
+                    <h2 class="nav-title plan-title" style="color:sandybrown; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size:39px; letter-spacing:5px;">Plan</h2>
+                    <p class="nav-description plan-description" style="color:slategray;">Browse through the recipe
+                        guides and plan according to
+                        the total time length of each recipe. Schedule a future recipe to your calendar depending on
+                        your time!
+                    </p>
+                </div>
+            </section>
+            <section class="fermenting-section" style="margin:10px; text-align:center;">
+                <h2 class="nav-title fermenting-title" style="color:sandybrown; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 35px; letter-spacing:4px;">Fermenting</h2>
+                <img class="ferment" src="photos/ferment4.jpeg" style="width:500px; height:300px;">
+                <p class="fermenting-content" style="color:slategray;">
+                    Let ferMentor be your guide to start your own fermentation processess with our step-by-step
+                    recipes, including video tutorials, timers, and more handy tools to make fermenting a breeze.
+                </p>
+            </section>
+            <section class="nav-section more-reasons-section" style="margin:10px; text-align:center;">
+                <div class="nav-content-wrapper">
+                    <div class="more-reasons-content nav-content">
+                        <h2 class="nav-title more-reasons-title" style="color:sandybrown; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 34px; letter-spacing: 4px;">More
+                            Reasons to Join ferMentor</h2>
+                        <p class="nav-description more-reasons-description" style="color:slategray;">ferMentor also
+                            allow users to create their
+                            own fermentation recepies and publish them for other users to view and follow their guides.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="mobile-section nav-section" style="margin:10px; text-align:center;">
+                <h2 class="mobile-title" style="color:sandybrown; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size:33px; letter-spacing:3px;">
+                    ferMentor is wherever you are </h2>
+                <p class="mobile-description" style="color:slategray;">Take ferMentor wherever you go available at the
+                    App Store and Google
+                    Play!</p>
+                <div class="app-store-links">
+                    <div class="app-promo-section">
+                        <li class="nav-menu-list-menu">
+
+                            <img alt="iPhone" src="https://x.yummlystatic.com/s/1ba9ddc/img/mobile/badge-ios.svg"
+                                data-label="Download on the App Store" data-pin-nopin="true" style=" text-align:center;">
+
+                        </li>
+                        <li class="nav-menu-list-menu">
+                            <img alt="Android" src="https://x.yummlystatic.com/s/1ba9ddc/img/mobile/badge-android.svg"
+                                data-label="Get it on Google Play" data-pin-nopin="true" style=" text-align:center;">
+                        </li>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+        <div class="home-page-footer" style="margin:10px; text-align:center;">
+            <nav class="nav-footer" style="background-color:rgb(226, 221, 221);">
+                <div class="link-section-columns">
+                    <div class="column">
+                        <div class="footer-section">
+                            <div class="title" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; letter-spacing:3.5px; color:rgb(240, 121, 16)">Support</div>
+                            <a class="footer-link" title="ferMentor" aria-label="About Yummly" href="/about">About
+                                ferMentor</a>
+                            <br>
+                            <a class="footer-link" title="Contact Us" aria-label="Contact Us" href="/about#contact">Contact
+                                Us</a>
+                        </div>
+                    </div>
+                    <div class="flex-expander">
+                        <div class="column">
+                            <div class="footer-section">
+                                <div class="title" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; letter-spacing:3.5px; color:rgb(240, 121, 16)">Tools</div>
+                                <span class="footer-link">FAQs</span>
+                            </div>
+                        </div>
+
+                        <div class="title social-media-title" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; letter-spacing:3.5px; color:rgb(240, 121, 16);">Follow Us</div>
+                        <div class="social-media-links"><a id="qa-social-facebook" href="https://facebook.com" title="Yummly on Facebook"
+                                aria-label="Yummly on Facebook" target="_blank" rel="noopener nofollow"><span class="y-icon social-link-icon"
+                                    data-icon="f"></span>
+                                <span class="screen-reader-text">ferMentor
+                                    on Facebook</span></a>
+                            <br>
+                            <a id="qa-social-pinterest" href="https://pinterest.com" title="Yummly on Pinterest"
+                                aria-label="Yummly on Pinterest" target="_blank" rel="noopener nofollow"><span class="y-icon social-link-icon"
+                                    data-icon="p"></span><span class="screen-reader-text">ferMentor
+                                    on Pinterest</span></a>
+                            <br>
+                            <a id="qa-social-instagram" href="https://instagram.com" title="Yummly on Instagram"
+                                aria-label="Yummly on Instagram" target="_blank" rel="noopener nofollow"><span class="y-icon social-link-icon"
+                                    data-icon="i"></span><span class="screen-reader-text">ferMentor
+                                    on Instagram</span></a>
+                            <br>
+                            <a id="qa-social-youtube" href="https://www.youtube.com" title="Yummly on YouTube"
+                                aria-label="Yummly on YouTube" target="_blank" rel="noopener nofollow"><span class="y-icon social-link-icon"
+                                    data-icon="u"></span><span class="screen-reader-text">ferMentor
+                                    on YouTube</span></a></div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    </div>
+    </nav>
+
+    {{{body}}}
+
+</body>
+
+</html>
