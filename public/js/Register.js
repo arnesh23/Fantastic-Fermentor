@@ -31,12 +31,7 @@ $(function() {
   });
 
   $("#addTask").on("click", function (event) {
-    $.ajax("/task", {
-      type: "GET",
-  }).then(function () {
-          // Reload the page to get the updated list
-         // location.reload();
-      });  
+    res.render("task", {
 
 
 })
