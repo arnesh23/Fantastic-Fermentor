@@ -4,6 +4,7 @@ var db = require("../models")
 
 module.exports = function (app) {
     app.post("/api/task", function (req, res) {
+        console.log(req.body.cookingHardware)
         db.tasks.create(req.body).then(function (dbTask) {
             res.json(dbTask);
         });
