@@ -21,7 +21,7 @@ $(".create-form").on("submit", function (event) {
         };
 
         // Send the POST request.
-        $.ajax("/api/tasks", {
+        $.ajax("/api/task", {
             type: "POST",
             data: newTask
         }).then(
@@ -34,4 +34,18 @@ $(".create-form").on("submit", function (event) {
     
 });
 
+//Delete Task
+$(".delete").on("click", function (event) {
+    var id = $(this).data("id");
+    // Send the PUT request.
+    $.ajax("/api/task/" + id, {
+        type: "DELETE"
+    }).then(
+        function () {
+            console.log("delete");
+            // Reload the page to get the updated list
+            location.reload();
+        }
+    );
+});
 })
