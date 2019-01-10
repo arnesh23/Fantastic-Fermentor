@@ -13,12 +13,12 @@ module.exports = function (app) {
     });
 
     app.get("/task", function (req, res) {
-        console.log("entra");
+        
         db.tasks.findAll(req.body).then(function (dbTask) {
            // console.log(dbTask.tasks.dataValues.id)
             res.render("task", {
-                tasks: dbTask
-
+                tasks: dbTask,
+                user: req.user
             });
 
         });
