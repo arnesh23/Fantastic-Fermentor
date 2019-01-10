@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <th>Project Name</th>
+    <th>General Instructions</th>
+    <th>Actions</th>
+  </tr>
+  
+  {{#each projects}}
+  <tr>
+
+    <td>{{name}}</td>
+    <td>{{instructions}}</td>
+    <td>{{userId}}</td>
+    <td><button type=“button” class=” btn btn-primary” data-id={{id}} id=addTask> Add Task</button></td>
+  </tr>
+  {{/each}}
+</table>

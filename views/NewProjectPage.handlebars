@@ -2,7 +2,6 @@
 <h1>New Project Page!!</h1>
 </div>
 
-
 <p> Categories</p>
 <form class="create-form card p-2" style="width: 34rem;">
 
@@ -15,56 +14,32 @@
         </select>
     </div>
 </form>
+<p> Status </p>
+<form class="create-form card p-2" style="width: 34rem;">
+
+    <div class="form-group">
+        <label for="statusList">Select a Status:</label>
+        <select class="form-control" id="statusList">
+            {{#each statuses}}
+            <option value={{id}}>{{name}}</option>
+            {{/each}}
+        </select>
+    </div>
+</form>
 <br>
 <form class = "projectName">
-  Project Name: <input type="text" name="pName"><br>
+  Project Name: <input type="text" name="pName" id="projectName"><br>
 </form>
 <br>
 <form class = "pictureURL">
-  PictureURL: <input type="text" name="pURL"><br>
+  PictureURL: <input type="text" name="pURL" id="pictureURL"><br>
 </form>
 <br>
 <form class = "generalInstructions">
-  General Instructions: <input type="text" name="gInstructions"><br>
+  General Instructions: <input type="text" name="gInstructions" id="ginstructions"><br>
 </form>
+<input type="hidden" id="userid" value={{user.id}}><br>
 <form class = "submitButton">
-<input type="submit" value="Submit">
+<input type="submit" value="Submit" id="submitbutton">
 </form>
-<table>
-  <tr>
-    <th>Project Name</th>
-    <th>General Instructions</th>
-    <th>Actions</th>
-  </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-  </tr>
-  <tr>
-    <td>Centro comercial Moctezuma</td>
-    <td>Francisco Chang</td>
-    <td>Mexico</td>
-  </tr>
-  <tr>
-    <td>Ernst Handel</td>
-    <td>Roland Mendel</td>
-    <td>Austria</td>
-  </tr>
-  <tr>
-    <td>Island Trading</td>
-    <td>Helen Bennett</td>
-    <td>UK</td>
-  </tr>
-  <tr>
-    <td>Laughing Bacchus Winecellars</td>
-    <td>Yoshi Tannamuri</td>
-    <td>Canada</td>
-  </tr>
-  <tr>
-    <td>Magazzini Alimentari Riuniti</td>
-    <td>Giovanni Rovelli</td>
-    <td>Italy</td>
-  </tr>
-</table>
-
+{{> projects/project-block}}

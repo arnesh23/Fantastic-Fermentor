@@ -1,24 +1,40 @@
+$(function() {
 
-//to post request to user when submit click
-$('#submitButton').on("click", function (page) {
-  //ajax Post Request to User Model
+  $(".submitButton").on("click", function (event) {
+      // Make sure to preventDefault on a submit event.
+      event.preventDefault();
+  
+   
+      var newProject = {
+        name: $("#projectName").val().trim(),
+        picture: $("#pictureURL").val().trim(),
+        instructions: $("#ginstructions").val().trim(),
+        categoryId: $("#customersList option:selected").val(),
+        UserId: $("#userid").val(),
+        statusId: $("#statusList option:selected").val()
+        //
+      };
+     
 
-  var newUser = {
-      firstName: $("#FirstName").val().trim(),
-      lastName: $("#LastName").val().trim(),
-      email: $("#email").val().trim(),
-      password: $("#password").val().trim()
-    };
+      console.log("jquery"+$("#userid").val())
 
-    console.log(newUser)
+    console.log(newProject)
+    
+     // Send the POST request.
+     $.ajax("/api/register", {
+      type: "POST",
+      data: newProject
+  }).then(function () {
+          // Reload the page to get the updated list
+          location.reload();
+      });  
+  });
 
-  $.ajax({
-      method: "POST",
-      url: "/api/user/",
-      data: newUser
-    }).then()
-
-  })
+  $("#addTask").on("click", function (event) {
+    res.render("task", {
 
 
+})
+
+})
 
