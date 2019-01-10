@@ -5,6 +5,8 @@ var db = require("../models")
 
 // Controller for first web-page
 
+
+
 module.exports = function(app){
     app.get("/new", function(req, res) { 
       // console.log("api/posts/user"+req.body)
@@ -12,23 +14,26 @@ module.exports = function(app){
           // console.log("categories"+categoriesDB);
          //  res.render("NewProjectPage", {categories: categoriesDB},)
 
-         db.projects.findAll({
-            // include: [db.categories]
-         }).then(function(projectsDB){
-          projectsDB = {
-            name: "blah",
-            //instructions: "do this do that",
-            //actions: "null"
-        }
-        
+         db.projects.findAll({}).then(function(projectsDB){
+
+          db.status.findAll({}).then(function(statusesDB){
+
             //console.log("categories:"+categoriesDB+"projects"+projectsDB)
-              res.render("NewProjectPage", {
-                categories: categoriesDB,
-                projects: projectsDB
-            })
+            res.render("NewProjectPage", {
+              categories: categoriesDB,
+              projects: projectsDB,
+              statuses: statusesDB,
+              user: req.user
+          })
+          })
+        
+            
          })
        }) 
   });
+
+
+
 }
 
 //Controller for second webpage
