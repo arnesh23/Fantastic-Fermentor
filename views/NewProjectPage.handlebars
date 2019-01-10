@@ -1,0 +1,45 @@
+<div class=header>
+<h1>New Project Page!!</h1>
+</div>
+
+<p> Categories</p>
+<form class="create-form card p-2" style="width: 34rem;">
+
+    <div class="form-group">
+        <label for="customersList">Select a Category:</label>
+        <select class="form-control" id="customersList">
+            {{#each categories}}
+            <option value={{id}}>{{name}}</option>
+            {{/each}}
+        </select>
+    </div>
+</form>
+<p> Status </p>
+<form class="create-form card p-2" style="width: 34rem;">
+
+    <div class="form-group">
+        <label for="statusList">Select a Status:</label>
+        <select class="form-control" id="statusList">
+            {{#each statuses}}
+            <option value={{id}}>{{name}}</option>
+            {{/each}}
+        </select>
+    </div>
+</form>
+<br>
+<form class = "projectName">
+  Project Name: <input type="text" name="pName" id="projectName"><br>
+</form>
+<br>
+<form class = "pictureURL">
+  PictureURL: <input type="text" name="pURL" id="pictureURL"><br>
+</form>
+<br>
+<form class = "generalInstructions">
+  General Instructions: <input type="text" name="gInstructions" id="ginstructions"><br>
+</form>
+<input type="hidden" id="userid" value={{user.id}}><br>
+<form class = "submitButton">
+<input type="submit" value="Submit" id="submitbutton">
+</form>
+{{> projects/project-block}}

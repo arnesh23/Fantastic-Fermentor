@@ -4,26 +4,65 @@
 // ******************************************************************************
 // *** Dependencies
 // =============================================================
+require('dotenv').config()
 var express = require("express");
+var bodyParser = require('body-parser');
 var path = require('path');
+var cookieParser = require('cookie-parser');
 var exphbs = require('express-handlebars');
+var customAuthMiddleware = require('./middleware/custom-auth-middleware');
+
 // Sets up the Express App
 // =============================================================
 var app = express();
 
-app.use(express.static('public'));
-//app.set('public', path.join(__filename, "photos"));
+// Sets up the Express app to handle data parsing
+//app.use(express.urlencoded({ extended: true }));
+//app.use(express.json());
 
+// Express middleware that allows POSTing data
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
-app.set('views', path.join(__dirname, 'views'));
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+// Static directory
+app.use(express.static("public"));
+app.use(cookieParser());
+app.use(customAuthMiddleware);
+
+app.set('views', path.join(__dirname, '/views'));
+app.engine('handlebars', exphbs({
+  defaultLayout: 'main',
+  extname: '.handlebars',
+  layoutsDir: 'views/layouts'
+}));
 app.set('view engine', 'handlebars');
 
-app.set('port', (process.env.PORT || 8080));
-app.get('/', function(req, res) {
-  res.render('home', {
-    content: 'This is some content',
-    published: true
+
+// controller imports
+var userController = require('./controllers/user-controller');
+var viewsController = require('./controllers/views-controller');
+
+//var taskController =require("./controllers/task-controller.js");
+// hook up our controllers
+app.use(userController);
+app.use(viewsController);
+//app.use(taskController);
+// Routes
+// =============================================================
+//require("./routes/post-api-routes")(app);
+//require("./routes/author-api-routes.js")(app);
+//require("./routes/html-routes.js")(app);
+require('./controllers/user-controller');
+require('./controllers/views-controller');
+require("./controllers/task-controller.js")(app);
+require("./controllers/register-controller.js")(app);
+require("./controllers/Fermentor_controller.js")(app);
+
+// Syncing our sequelize models and then starting our Express app
+// =============================================================
+db.sequelize.sync({ force: false }).then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
   });
 });
 
