@@ -1,5 +1,5 @@
 var express = require('express');
-var bcrypt = require('bcrypt');
+var bcrypt = require('bcryptjs');
 
 var router = express.Router();
 
@@ -39,13 +39,14 @@ router.post('/register', async (req, res) => {
 
 /* Login Route
 ========================================================= */
-router.post('/login', async (req, res) => {
+router.post('/login-user', async (req, res) => {
   var { username, password } = req.body;
 
   // if the username / password is missing, we use status code 400
   // indicating a bad request was made and send back a message
   console.log("here");
   console.log (req.body)
+  console.log("test");
   if (!username || !password) {
     return res.status(400).send(
       'Request missing username or password param'

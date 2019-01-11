@@ -29,7 +29,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Static directory
-//app.use(express.static(__dirname, "public"));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
 app.use(customAuthMiddleware);
