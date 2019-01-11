@@ -31,7 +31,7 @@ $(".create-form").on("submit", function (event) {
     });
 
     
-    
+    var projectID=$("#idProject").val()
     console.log (hardware);
         var newTask = {
             taskNumber: $("#taskNumber").val().trim(),
@@ -45,11 +45,11 @@ $(".create-form").on("submit", function (event) {
            cookingHardware:  hardware,
             ingredients: ingredients,
             steps:  steps,
-            projectId: $("#idProject").val()
+            projectId: projectID
         };
 
         // Send the POST request.
-        $.ajax("/api/task/", {
+        $.ajax("/api/task/"+projectID, {
             type: "POST",
             data: newTask
         }).then(
