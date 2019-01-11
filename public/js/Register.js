@@ -31,10 +31,18 @@ $(function() {
   });
 
   $("#addTask").on("click", function (event) {
-    res.render("task", {
+    console.log("addtaskclick")
+//     $.ajax("/task", {
+//       type: "GET",
+//   }).then(function () {
+//           // Reload the page to get the updated list
+//           //location.reload();
+//       });  
 
 
-})
+// })
+window.location = "/task/";
+  })
 
 })
 
