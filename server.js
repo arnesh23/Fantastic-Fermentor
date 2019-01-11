@@ -61,6 +61,7 @@ require('./controllers/views-controller');
 require("./controllers/task-controller.js")(app);
 require("./controllers/register-controller.js")(app);
 require("./controllers/Fermentor_controller.js")(app);
+require("./controllers/projectList-controller.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================

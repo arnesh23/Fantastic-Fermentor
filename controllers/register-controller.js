@@ -10,7 +10,7 @@ module.exports = function(app){
           res.json(dbProjects);
         });
 
-
+      });
 
         app.delete("/api/project/:id", function (req, res) {
           console.log('delete called')
@@ -30,7 +30,7 @@ module.exports = function(app){
           });
           
         });
-      });
+   
 
       app.get("/api/project/:id", function (req, res) {
         console.log('get called')

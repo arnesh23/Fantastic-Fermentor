@@ -1,0 +1,27 @@
+<div class="container w-50">
+    <div class="row ">
+        <div class="col ">
+            Project Name
+        </div>
+        <div class="col">
+            General Instructions
+        </div>
+        <div class="col">
+            Actions
+        </div>
+    </div>
+
+    {{#each projects}}
+    <div class="row">
+        <div class="col">
+            {{name}}
+        </div>
+        <div class="col">
+            {{instructions}}
+        </div>
+        <div class="col ">
+            <a href="/project/{{id}}/projectlog" > Use This Project</a>
+        </div>
+    </div>
+    {{/each}}
+</div>
