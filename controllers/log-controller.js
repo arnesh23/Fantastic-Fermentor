@@ -37,7 +37,7 @@ module.exports = function (app) {
         }
       }).then(function (dbTask) {
 
-        res.render("task", {
+        res.render("log", {
           tasks: dbTask,
           user: req.user,
           projects: dbProject
