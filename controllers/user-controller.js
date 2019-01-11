@@ -1,5 +1,5 @@
 var express = require('express');
-var bcrypt = require('bcryptjs');
+var bcrypt = require('bcrypt');
 
 var router = express.Router();
 
@@ -15,6 +15,7 @@ router.post('/register', async (req, res) => {
   // hash the password provided by the user with bcrypt so that
   // we are never storing plain text passwords. This is crucial
   // for keeping your db clean of sensitive data
+  console.log("here");
   var hash = bcrypt.hashSync(req.body.password, 10);
 
   try {
@@ -43,6 +44,7 @@ router.post('/login', async (req, res) => {
 
   // if the username / password is missing, we use status code 400
   // indicating a bad request was made and send back a message
+  console.log("here");
   console.log (req.body)
   if (!username || !password) {
     return res.status(400).send(
@@ -55,7 +57,7 @@ router.post('/login', async (req, res) => {
     // we will cover the user authenticate method in the next section
     let user = await User.authenticate(username, password)
     //user = await user.authorize();
- 
+    console.log("User" + user);
     return res.json(user);
 
   } catch (err) {
