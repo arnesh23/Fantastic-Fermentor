@@ -25,15 +25,17 @@ module.exports = function(app){
               statuses: statusesDB,
               user: req.user
           })
-          })      
+          })
+        
+            
          })
        }) 
   });
 
-  app.get("/", function(req, res) { 
 
-  })
+
 }
+
 //Controller for second webpage
 
 /*

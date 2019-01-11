@@ -1,10 +1,10 @@
 $(function() {
-    if (window.location.pathname === '/login-user') {
+    if (window.location.pathname === '/') {
       $('.signup-form').remove()
       $('.login').on('click', login);
     }
   
-    if (window.location.pathname === '/register-user') {
+    if (window.location.pathname === '/register') {
       $('.login-form').remove()
       $('.signup').on('click', signup);
     }
@@ -26,7 +26,7 @@ $(function() {
   function login(e) {
     e.preventDefault();
     if (!validInput(['username', 'password'])) return;
-    $.ajax('/login-user', {
+    $.ajax('/login', {
       method: 'POST',
       data: {
         username: $('[name="username"]').val(),
@@ -42,7 +42,7 @@ $(function() {
   function signup(e) {
     e.preventDefault();
     if (!validInput(['username', 'password', 'email'])) return;
-    $.ajax('/register-user', {
+    $.ajax('/register', {
       method: 'POST',
       data: {
         username: $('[name="username"]').val(),
