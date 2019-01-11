@@ -3,7 +3,7 @@ var db = require("../models")
 // Controller for first web-page
 
 module.exports = function (app) {
-    app.post("/api/task", function (req, res) {
+    app.post("/api/task/:id", function (req, res) {
         console.log(req.body.cookingHardware)
         db.tasks.create(req.body).then(function (dbTask) {
             res.json(dbTask);
@@ -22,6 +22,30 @@ module.exports = function (app) {
             });
 
         });
+
+
+    });
+
+    app.get("/task/:id", function (req, res) {
+        
+        db.projects.findAll({}).then(function (dbProject) {
+ 
+            db.tasks.findAll({
+              include: [db.projects]
+            }).then(function (dbTask) {
+      
+             
+              res.render("task", { 
+                tasks: dbTask,
+                user: req.user,
+                
+                project: dbProject
+      
+               });
+            });
+      
+          });
+      
 
 
     });
