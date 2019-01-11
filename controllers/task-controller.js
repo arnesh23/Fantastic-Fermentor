@@ -38,9 +38,9 @@ module.exports = function (app) {
                 include: [db.projects],
                 where: {
                     projectId: req.params.id
-                  }
+                }
             }).then(function (dbTask) {
-                
+
 
                 res.render("task", {
                     tasks: dbTask,
@@ -51,29 +51,50 @@ module.exports = function (app) {
             });
 
         });
-
-
-
     });
 
-    app.delete("/api/task/:id", function (req, res) {
-        var condition = "id = " + req.params.id;
+    app.get("/task/:id/modal", function (req, res) {
 
-        db.tasks.destroy({
+
+        db.tasks.findAll({
+            include: [db.projects],
             where: {
-                id: req.params.id
+                projectId: req.params.id
             }
         }).then(function (dbTask) {
-            res.json(dbTask);
-        })
-            .catch(function (err) {
-                // handle error;
-                console.log("Error");
 
+
+            res.json({
+                tasks: dbTask,
+                user: req.user,
+                
 
             });
+        });
 
     });
+
+
+
+
+app.delete("/api/task/:id", function (req, res) {
+    var condition = "id = " + req.params.id;
+
+    db.tasks.destroy({
+        where: {
+            id: req.params.id
+        }
+    }).then(function (dbTask) {
+        res.json(dbTask);
+    })
+        .catch(function (err) {
+            // handle error;
+            console.log("Error");
+
+
+        });
+
+});
 
 
 
