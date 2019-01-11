@@ -49,7 +49,7 @@ $(".create-form").on("submit", function (event) {
         };
 
         // Send the POST request.
-        $.ajax("/api/task", {
+        $.ajax("/api/task/", {
             type: "POST",
             data: newTask
         }).then(
