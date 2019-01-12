@@ -66,7 +66,7 @@ $(function () {
         }
     );
   })
-  
+
   $(".updatebtn").on("click", function (event) {
     console.log("cliked update")
     //event.preventDefault();
@@ -94,4 +94,3 @@ $(function () {
   })
 
 })
-

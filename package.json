@@ -19,7 +19,6 @@
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0",
-    "jquery": "^3.3.1",
     "mysql": "^2.16.0",
     "mysql2": "^1.6.4",
     "path": "^0.12.7",
