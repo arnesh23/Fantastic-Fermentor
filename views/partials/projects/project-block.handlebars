@@ -1,4 +1,4 @@
-<table>
+<table class="table" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; background-color:sandybrown; color:white; text-align:center;">
   <tr>
     <th>Project Name</th>
     <th>General Instructions</th>
@@ -11,7 +11,9 @@
     <td>{{name}}</td>
     <td>{{instructions}}</td>
     <td>{{userId}}</td>
-    <td><button type=“button” class=” btn btn-primary” data-id={{id}} id=addTask> Add Task</button></td>
+    <td><a href='/task/{{id}}'>Add new task {{id}}</a>
+      <td> <span class='delbtn' data-id={{id}}> <button type=“button” > Delete Task</button></td></span>
+       <td> <span class='updatebtn' data-id={{id}}> <button type=“button” > Update</button></td></span>
   </tr>
   {{/each}}
 </table>
