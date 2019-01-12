@@ -1,10 +1,9 @@
-<div class=header>
-<h1>New Project Page!!</h1>
-</div>
+<div class="header" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; ">
+<h1>New Project</h1>
 
-<p> Categories</p>
-<form class="create-form card p-2" style="width: 34rem;">
+<div class="categories" style="text-align:center;">
 
+<form class="create-form card p-2" style="width: 34rem; ">
     <div class="form-group">
         <label for="customersList">Select a Category:</label>
         <select class="form-control" id="customersList">
@@ -14,8 +13,9 @@
         </select>
     </div>
 </form>
+</div>
 <p> Status </p>
-<form class="create-form card p-2" style="width: 34rem;">
+<form class="create-form card p-2" style="width: 34rem; text-align:center;">
 
     <div class="form-group">
         <label for="statusList">Select a Status:</label>
@@ -42,4 +42,5 @@
 <form class = "submitButton">
 <input type="submit" value="Submit" id="submitbutton">
 </form>
+</div>
 {{> projects/project-block}}
