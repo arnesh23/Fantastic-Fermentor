@@ -2,34 +2,110 @@
 <html>
 
 <head>
-	<meta charset="UTF-8">
-	
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-	 crossorigin="anonymous">
+    <meta charset="UTF-8">
 
-	 <link rel="stylesheet" href="/css/styles.css" type="text/css" />
-	<link rel="stylesheet" href="/css/main.css">
-	<title>Fermentor</title>
-	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-	
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
 
-	
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-	 crossorigin="anonymous"></script>
-	<script src="/js/form.js"></script>
-	<script src="/js/main.js"></script>
-	<script src="/js/task.js"></script>
-	<script src="/js/Register.js"></script>
+    <link rel="stylesheet" href="/css/styles.css" type="text/css" />
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Fermentor</title>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script src="/js/form.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/task.js"></script>
+    <script src="/js/Register.js"></script>
+>>>>>>> master
 
 
 
 </head>
 
 <body>
-   
+    {{#if user}}
 
+    <p style="color:sandybrown; float:right;"> <strong>{{user.username}}</strong> <a class="user"></a></p>
+    <nav class="nav-bar" style="background-color:white; padding:20px; margin: 10px;">
+        <section class="top-bar">
+            <div id="logo">
+                <img src="/photos/logo.png" class="auth-image" alt="logo" width="22%" height="32%" data-pin-nopin="true">
+                <button class="logout" data-tracking="Sign In" title="Sign in" href="#" aria-label="Sign in" style=" color:sandybrown;  transform: translateY(4px); border: 3px solid orange; padding: 0 3em; height: 30px; margin-left:60%;
+                         font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; background-color: transparent; ">
+                    Log Out</button>
+
+        </section>
+        </div>
+    </nav>
+
+    {{else}}
+    <nav class="nav-bar" style="background-color:white; padding:20px; margin: 10px;">
+        <section class="top-bar">
+            <div id="logo">
+                <img src="/photos/logo.png" class="auth-image" alt="logo" width="22%" height="32%" data-pin-nopin="true">
+
+             <a href="/register-user"> <button class="button login"  style=" color:sandybrown; margin:25px 40px 40px; transform: translateY(4px); border: 3px solid orange; padding: 0 3em; height: 30px; margin-left:60%; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; background-color: transparent; ">Sign
+                    In</button></a>
+
+        </section>
+        </div>
+    </nav>
+    {{/if}}
     {{{body}}}
+    <div class="home-page-footer" style="margin:10px; text-align:center;">
+        <nav class="nav-footer" style="background-color:rgb(226, 221, 221);">
+            <div class="link-section-columns">
+                <div class="column">
+                    <div class="footer-section">
+                        <div class="title" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; letter-spacing:3.5px; color:rgb(240, 121, 16)">Support</div>
+                        <a class="footer-link" title="ferMentor" aria-label="About ferMentor" href="/about" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">About
+                            ferMentor</a>
+                        <br>
+                        <a class="footer-link" title="Contact Us" aria-label="Contact Us" href="/about#contact" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serifl">Contact
+                            Us</a>
+                    </div>
+                </div>
+                <div class="flex-expander">
+                    <div class="column">
+                        <div class="footer-section">
+                            <div class="title" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; letter-spacing:3.5px; color:rgb(240, 121, 16)">Tools</div>
+                            <span class="footer-link" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">FAQs</span>
+                        </div>
+                    </div>
+
+                    <div class="title social-media-title" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; letter-spacing:3.5px; color:rgb(240, 121, 16);">Follow
+                        Us</div>
+                    <div class="social-media-links"><a id="qa-social-facebook" href="https://facebook.com" title="ferMentor on Facebook"
+                            aria-label="ferMentor on Facebook" target="_blank" rel="noopener nofollow"><span class="y-icon social-link-icon"
+                                data-icon="f"></span>
+                            <span class="screen-reader-text" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">ferMentor
+                                on Facebook</span></a>
+                        <br>
+                        <a id="qa-social-pinterest" href="https://pinterest.com" title="ferMentor on Pinterest" aria-label="ferMentor on Pinterest"
+                            target="_blank" rel="noopener nofollow"><span class="y-icon social-link-icon" data-icon="p"></span><span
+                                class="screen-reader-text" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">ferMentor
+                                on Pinterest</span></a>
+                        <br>
+                        <a id="qa-social-instagram" href="https://instagram.com" title="ferMentor on Instagram" aria-label="ferMentor on Instagram"
+                            target="_blank" rel="noopener nofollow"><span class="y-icon social-link-icon" data-icon="i"></span><span
+                                class="screen-reader-text" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">ferMentor
+                                on Instagram</span></a>
+                        <br>
+                        <a id="qa-social-youtube" href="https://www.youtube.com" title="ferMentor on YouTube" aria-label="ferMentor on YouTube"
+                            target="_blank" rel="noopener nofollow"><span class="y-icon social-link-icon" data-icon="u"></span><span
+                                class="screen-reader-text" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">ferMentor
+                                on YouTube</span></a></div>
+                </div>
+            </div>
+    </div>
+    </div>
+
+  
 
 </body>
 

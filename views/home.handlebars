@@ -1,40 +1,23 @@
-<h1>Fermentor </h1>
+
 {{#if user}}
- <p>Logged in as <strong>{{user.username}}</strong></p>
+ 
 {{/if}}
  <div class="page" style="background-color:white; position:relative; width:100%;">
         <div class="home-page-promo" style="margin:0; padding:0; border:0; vertical-align:baseline;">
-            <nav class="nav-bar" style="background-color:white; padding:20px; margin: 10px;">
-                <section class="top-bar">
-                    <div id="logo" style="display: initial;">
-                        <img src="photos/logo.png" class="auth-image" alt="logo" width="25%" height="35%"
-                            data-pin-nopin="true">
-                    </div>
-                    <div class="flex-expander" style="flex:1; align-items:center;"></div>
-                    <div class="global-search" style="position:static; margin-top: 1em; opasity:1; trasnsform: scale(1); transition:opasity .4s ease;">
-                        <div class="relative-wrapper" style="position:relative; ">
-                            <button class="global-search-button" title="Open Search Modal" aria-label="Open Search Modal"
-                                style="max-width:50px; padding:0; box-shadow: 0 8px 13px 0 rgba (0,0,0, .12), 0 -1px 2px rgba(0,0,0,.05); color:black; overflow:hidden; display:flex; transition: max-width .4 ease; border-radius: 3em; ">
-                                <div class="y-icon spyglass" data-icon="❍" style="padding: 1em; font-size: 1.5em; font-family: y-icon; transform: rotate(90deg);"></div>
-                            </button>
-                        </div>
-                    </div>
-                    <button class="btn-wire top-bar-signin" data-tracking="Sign In" title="Sign in" aria-label="Sign in"
-                        style=" color:sandybrown; margin:25px 40px 40px; transform: translateY(4px); position: relative; text-align:center; border: 3px solid orange; padding: 0 3em; height: 30px; background-color: transparent; display:table-column;">Sign
-                        In</button>
-                </section>
-            </nav>
-
+           
             <section class="promo-overview nav-section" style="padding:5px; margin:10px; text-align:center;">
                 <div class="nav-content promo-overview-content" style="order:2; display:flex; flex-direction:column; align-items:center; max-width:100%;">
-                    <div class="promo-overview-header" style="color:blueviolet; font-size:18px; letter-spacing:3px; color: #bababa;">
+                    <div class="promo-overview-header" style="color:blueviolet; font-size:22px; letter-spacing:3px; color: #bababa; margin-bottom:10px;">
                         THE ferMentor EXPERIENCE</div>
-                    <h1 class="overview-title nav-title" style="font-size:42px; margin-top:5px; margin-bottom:10px; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color:sandybrown; letter-spacing:2px;">
+                        <img alt="ferment" src="photos/ferment3.jpeg" class="ferment" style="width:550px; height:300px;">
+                    <h1 class="overview-title nav-title" style="font-size:42px; margin-top:25px; margin-bottom:10px; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color:sandybrown; letter-spacing:2px;">
                         ferMentor is your electronic fermentation guide</h1>
-                    <p class="promo-overview-description nav-description" style="color:slategray; font-size:1em; line-height:1.5; margin-bottom:25px;">A
-                        list of fermentation recepies and
-                        recommendations just for you to handy tools and helpful step by step guides, ferMentor has
-                        everything you need to become a master at fermenting. </p>
+                    <p class="promo-overview-description nav-description" style="color:slategray; font-size:1em; line-height:1.5; margin-bottom:25px;">From a
+                        list of fermentation recepies,
+                        step-by-step guides to handy tools, ferMentor has
+                        everything you need to become a master at fermenting.
+                        <br>
+                         Create your own fermentation profile where you are able to collect fermatation apps as well as creating your very own for the rest of the world to see. </p>
                     <button class="btn-tertiary promo-cta" data-tracking="CTA1" title="Join Now for Free" aria-label="Join Now for Free"
                         style="padding: 0 2em; height:60px; color:white; display:inline-block; font-size:35px; border-color:black 3px; background-color:sandybrown; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-bottom:20px; margin-top:50px; ">Join
                         Now for Free</button>
@@ -167,51 +150,6 @@
             </section>
 
         </div>
-        <div class="home-page-footer" style="margin:10px; text-align:center;">
-            <nav class="nav-footer" style="background-color:rgb(226, 221, 221);">
-                <div class="link-section-columns">
-                    <div class="column">
-                        <div class="footer-section">
-                            <div class="title" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; letter-spacing:3.5px; color:rgb(240, 121, 16)">Support</div>
-                            <a class="footer-link" title="ferMentor" aria-label="About Yummly" href="/about">About
-                                ferMentor</a>
-                            <br>
-                            <a class="footer-link" title="Contact Us" aria-label="Contact Us" href="/about#contact">Contact
-                                Us</a>
-                        </div>
-                    </div>
-                    <div class="flex-expander">
-                        <div class="column">
-                            <div class="footer-section">
-                                <div class="title" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; letter-spacing:3.5px; color:rgb(240, 121, 16)">Tools</div>
-                                <span class="footer-link">FAQs</span>
-                            </div>
-                        </div>
-
-                        <div class="title social-media-title" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; letter-spacing:3.5px; color:rgb(240, 121, 16);">Follow Us</div>
-                        <div class="social-media-links"><a id="qa-social-facebook" href="https://facebook.com" title="Yummly on Facebook"
-                                aria-label="Yummly on Facebook" target="_blank" rel="noopener nofollow"><span class="y-icon social-link-icon"
-                                    data-icon="f"></span>
-                                <span class="screen-reader-text">ferMentor
-                                    on Facebook</span></a>
-                            <br>
-                            <a id="qa-social-pinterest" href="https://pinterest.com" title="Yummly on Pinterest"
-                                aria-label="Yummly on Pinterest" target="_blank" rel="noopener nofollow"><span class="y-icon social-link-icon"
-                                    data-icon="p"></span><span class="screen-reader-text">ferMentor
-                                    on Pinterest</span></a>
-                            <br>
-                            <a id="qa-social-instagram" href="https://instagram.com" title="Yummly on Instagram"
-                                aria-label="Yummly on Instagram" target="_blank" rel="noopener nofollow"><span class="y-icon social-link-icon"
-                                    data-icon="i"></span><span class="screen-reader-text">ferMentor
-                                    on Instagram</span></a>
-                            <br>
-                            <a id="qa-social-youtube" href="https://www.youtube.com" title="Yummly on YouTube"
-                                aria-label="Yummly on YouTube" target="_blank" rel="noopener nofollow"><span class="y-icon social-link-icon"
-                                    data-icon="u"></span><span class="screen-reader-text">ferMentor
-                                    on YouTube</span></a></div>
-                    </div>
-                </div>
-        </div>
-    </div>
+        
     </div>
     </nav>
