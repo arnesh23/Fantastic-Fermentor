@@ -15,6 +15,7 @@ router.post('/register', async (req, res) => {
   // hash the password provided by the user with bcrypt so that
   // we are never storing plain text passwords. This is crucial
   // for keeping your db clean of sensitive data
+  console.log("here");
   var hash = bcrypt.hashSync(req.body.password, 10);
 
   try {
@@ -38,12 +39,14 @@ router.post('/register', async (req, res) => {
 
 /* Login Route
 ========================================================= */
-router.post('/login', async (req, res) => {
+router.post('/login-user', async (req, res) => {
   var { username, password } = req.body;
 
   // if the username / password is missing, we use status code 400
   // indicating a bad request was made and send back a message
+  console.log("here");
   console.log (req.body)
+  console.log("test");
   if (!username || !password) {
     return res.status(400).send(
       'Request missing username or password param'
@@ -55,7 +58,7 @@ router.post('/login', async (req, res) => {
     // we will cover the user authenticate method in the next section
     let user = await User.authenticate(username, password)
     //user = await user.authorize();
- 
+    console.log("User" + user);
     return res.json(user);
 
   } catch (err) {

@@ -37,6 +37,18 @@ module.exports = function(app){
         var condition = "id = " + req.params.id;
         console.log(condition)
     
-    
+        db.projects.findOne({
+          where: {  
+            id: req.params.id
+          }
+        }).then(function (dbTask) {
+          res.json(dbTask);
+        })
+        .catch(function (err) {
+          // handle error;
+          console.log("Error"); 
+        });
+        
       });
+
 }
