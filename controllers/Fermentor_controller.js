@@ -7,16 +7,13 @@ var db = require("../models")
 
 
 
-module.exports = function(app){
-    app.get("/new", function(req, res) { 
-      // console.log("api/posts/user"+req.body)
-       db.categories.findAll({}).then(function(categoriesDB){
-          // console.log("categories"+categoriesDB);
-         //  res.render("NewProjectPage", {categories: categoriesDB},)
+module.exports = function (app) {
+  app.get("/new", function (req, res) {
+    if (req.user != null) {
 
-         db.projects.findAll({}).then(function(projectsDB){
-
-          db.status.findAll({}).then(function(statusesDB){
+      db.categories.findAll({}).then(function (categoriesDB) {
+        db.projects.findAll({}).then(function (projectsDB) {
+          db.status.findAll({}).then(function (statusesDB) {
 
             //console.log("categories:"+categoriesDB+"projects"+projectsDB)
             res.render("NewProjectPage", {
@@ -24,13 +21,16 @@ module.exports = function(app){
               projects: projectsDB,
               statuses: statusesDB,
               user: req.user
+            })
           })
-          })      
-         })
-       }) 
+        })
+      })
+    } else {
+      res.redirect("/login-user");
+    }
   });
 
-  app.get("/", function(req, res) { 
+  app.get("/", function (req, res) {
 
   })
 }

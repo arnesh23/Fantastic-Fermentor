@@ -61,13 +61,14 @@ module.exports = function (app) {
         db.tasks.findAll({
             include: [{
                 model: db.projectLog,
-                required:false
+                required: false
 
             }],
 
             where: {
                 projectId: req.params.id,
-                '$projectLogs.taskId$': { $ne:null }
+                '$projectLogs.taskId$': { $ne: null },
+                '$projectLogs.userId$': req.user.id
             }
         }).then(function (dbTask) {
 
@@ -92,24 +93,23 @@ module.exports = function (app) {
             where: {
                 taskId: req.params.id
             }
-        }).then(function (dbprojectLog)  {
+        }).then(function (dbprojectLog) {
             db.tasks.destroy({
                 where: {
                     id: req.params.id
                 }
             }).then(function (dbTask) {
                 res.json(dbTask);
-            })
-                .catch(function (err) {
-                    // handle error;
-                    console.log("Error" + err);
-    
-    
-                });
+            }).catch(function (err) {
+                // handle error;
+                console.log("Error" + err);
+
+
+            });
 
         })
 
-        
+
 
     });
 

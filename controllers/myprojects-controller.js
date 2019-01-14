@@ -9,33 +9,46 @@ var db = require("../models")
 
 module.exports = function (app) {
     app.get("/myprojects", function (req, res) {
-        console.log("LLEGA");
-        console.log(req.user.id)
-        db.projects.findAll({
-            include: [{
-                model: db.projectLog,
-                required: false,
-            }
-            ], where: {
+        
+        console.log(req.user);
+        if (req.user != null) {
+            // your code here.
 
-                '$projectLogs.userId$': req.user.id
-            }
+            db.projects.findAll({
+                include: [{
+                    model: db.projectLog,
+                    required: false,
+                }
+                ], where: {
+
+                    '$projectLogs.userId$': req.user.id
+                }
 
 
 
-        }).then(function (projectsDB) {
-            //console.log(projectsDB)
+            }).then(function (projectsDB) {
+                //console.log(projectsDB)
+
+
+                res.render("projectList", {
+
+                    projects: projectsDB,
+                    user: req.user,
+                    viewMy: true
+                })
+                //res.json(projectsDB);
+            }).catch(function (err) {
+                // handle error;
+                console.log("Error" + err);
+
+
+            });
+        } else {
             
-           
-            res.render("projectList", {
-
-                projects: projectsDB,
-                user: req.user,
-                viewMy: true
-            })
-            //res.json(projectsDB);
-        })
+            res.redirect("/login-user");
+        }
     })
+
 
 
 }
