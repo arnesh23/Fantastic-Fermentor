@@ -1,0 +1,82 @@
+<div class="header">
+<h1>Project Log Page</h1>
+</div>
+
+<table>
+  <tr>
+    <th>Project Name</th>
+  </tr>
+<tr>
+    <td>
+
+  {{user.username}}
+
+
+  {{#each projects}}
+    <li class="list-group-item d-flex justify-content-between lh-condensed">
+        <div>
+
+          <h6 class="my-0">
+            Project Name: {{project.name}} <br>
+          </h6>
+
+          <div class="modal" id="exampleModal{{id}}" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">{{project.name}}</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Note: {{note}} <br>
+                  Instructions: {{project.instructions}} <br>
+                  username: {{user.username}} <br>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <span class="text-muted">
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{id}}">
+            Details
+          </button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#example2Modal">
+            Tasks
+          </button>
+        </span>
+        </tr>
+        </td>
+    
+  {{/each}}
+
+
+    <div class="modal" id="example2Modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">{{name}}</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                
+                <div class="modal-body">
+                    {{#each tasks}}
+                 Name: {{name}} <br>
+                 {{/each}} 
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        

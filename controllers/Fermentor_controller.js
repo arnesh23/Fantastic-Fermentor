@@ -36,11 +36,28 @@ module.exports = function (app) {
     }
   });
 
-  app.get("/", function (req, res) {
+  app.put("/api/project/:id", function (req, res) {
 
-  })
-}
+    console.log("ID to PUT:" + req.params.id)
+    console.log("\n===========================\n")
+
+    db.projects.update(
+      req.body,
+      {
+        where: {
+          id: req.params.id
+        }
+      }).then(function (dbProject) {
+        console.log("UPDATED",dbProject)
+        res.json(dbProject);
+      });
+  });
+
+
+  }
+
 //Controller for second webpage
 
 /*
   */
+ 
