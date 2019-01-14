@@ -11,14 +11,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var exphbs = require('express-handlebars');
 var customAuthMiddleware = require('./middleware/custom-auth-middleware');
-
-// Sets up the Express App
-// =============================================================
 var app = express();
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 8090;
 
-// Requiring our models for syncing
-var db = require("./models");
+var db = require("./models")
 
 // Sets up the Express app to handle data parsing
 //app.use(express.urlencoded({ extended: true }));
@@ -46,10 +42,12 @@ app.set('view engine', 'handlebars');
 var userController = require('./controllers/user-controller');
 var viewsController = require('./controllers/views-controller');
 
+//var myprojects = require ("./controllers/myprojects-controller.js");
 //var taskController =require("./controllers/task-controller.js");
 // hook up our controllers
 app.use(userController);
 app.use(viewsController);
+//app.use(myprojects);
 //app.use(taskController);
 // Routes
 // =============================================================
@@ -62,10 +60,12 @@ require("./controllers/task-controller.js")(app);
 require("./controllers/register-controller.js")(app);
 require("./controllers/Fermentor_controller.js")(app);
 require("./controllers/projectList-controller.js")(app);
+require("./controllers/myprojects-controller.js")(app);
+require("./controllers/projectManagement_controller.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-db.sequelize.sync({ force: false }).then(function() {
+db.sequelize.sync({ force: true}).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });

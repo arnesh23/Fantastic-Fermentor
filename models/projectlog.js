@@ -16,6 +16,8 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false
       }
     });
+   
+
     projectLog.belongsTo(models.User, {
       foreignKey: {
         allowNull: false

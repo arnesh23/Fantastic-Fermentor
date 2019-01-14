@@ -8,7 +8,7 @@ var db = require("../models")
 
 
 module.exports = function (app) {
-  app.get("/new", function (req, res) {
+  app.get("/project-management", function (req, res) {
     if (req.user != null) {
 
       db.categories.findAll({}).then(function (categoriesDB) {
@@ -22,7 +22,7 @@ module.exports = function (app) {
           db.status.findAll({}).then(function (statusesDB) {
 
             //console.log("categories:"+categoriesDB+"projects"+projectsDB)
-            res.render("NewProjectPage", {
+            res.render("projectManagement", {
               categories: categoriesDB,
               projects: projectsDB,
               statuses: statusesDB,

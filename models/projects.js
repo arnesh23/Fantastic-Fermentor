@@ -29,6 +29,10 @@ module.exports = (sequelize, DataTypes) => {
     projects.hasMany(models.tasks, {
       onDelete: "cascade"
     });
+
+    projects.hasMany(models.projectLog, {
+      onDelete: "cascade"
+    });
   };
   return projects;
 };
