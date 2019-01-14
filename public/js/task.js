@@ -2,7 +2,7 @@
 
 $(function() {
 
-//Create New Burger
+
 $(".create-form").on("submit", function (event) {
     // Make sure to preventDefault on a submit event.
    event.preventDefault();
@@ -107,6 +107,53 @@ $("#btnSteps").click( function (event) {
 
 
     
+});
+
+
+$(".clone-form").on("submit", function (event) {
+    // Make sure to preventDefault on a submit event.
+    event.preventDefault();
+
+    console.log("LOG")
+    var arrayLog=[];
+    var project_id=$("#idProject").val();
+    console.log("project" + project_id);
+    $('.notes').each(function (index, element) {
+        //test
+        console.log("Elment: " + $(element).val())
+
+        console.log("ID Task: " + $(this).data("attr"))
+        
+       arrayLog.push( {
+            projectId: project_id,
+            UserId: $("#idUser").val(),
+            taskId: $(this).data("attr"),
+            note: $(element).val()
+        });
+
+        //arrayLog.push(newLog);
+
+
+    });
+
+
+    console.log(arrayLog)
+
+    // Send the POST request.
+    $.ajax("/projectList/projectLog/" + project_id , {
+        type: "POST",
+        dataType: 'json',
+        data: {'myArray': arrayLog}
+        //data: JSON.stringify(arrayLog)
+    }).then(
+        function () {
+
+            // Reload the page to get the updated list
+            //location.reload();
+            location.href="/myprojects"
+        }
+    );
+
 });
 
 

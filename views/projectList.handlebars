@@ -1,27 +1,55 @@
-<div class="container w-50">
-    <div class="row ">
-        <div class="col ">
-            Project Name
-        </div>
-        <div class="col">
-            General Instructions
-        </div>
-        <div class="col">
-            Actions
-        </div>
-    </div>
+<table class="table table-sm table-striped w-50 pb-10" align="center" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+    <thead class="table-info">
+        <tr>
 
-    {{#each projects}}
-    <div class="row">
-        <div class="col">
-            {{name}}
-        </div>
-        <div class="col">
-            {{instructions}}
-        </div>
-        <div class="col ">
-            <a href="/project/{{id}}/projectlog" > Use This Project</a>
-        </div>
-    </div>
-    {{/each}}
-</div>
+            <th>Project Name</th>
+            <th>General Instructions</th>
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {{#each projects}}
+        <tr>
+
+            <td> {{name}}</td>
+            <td> {{instructions}}</td>
+            {{#unless ../viewMy}}
+            <td><i class="far fa-check-circle"></i> <a href="/project/{{id}}/projectlog"> Use This Project</a></td>
+            {{/unless}}
+            {{#if ../viewMy}}
+            <td>
+                <div class="modal fade" id="exampleModal{{id}}" tabindex="-1" role="document">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title"><b>Tasks for {{name}}</b></h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body" id="taskDetail{{id}}">
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span class="text-muted">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="modalShow btn btn-primary" data-id={{id}} data-target="#exampleModal{{id}}">
+                        View My notes
+                    </button>
+
+                </span>
+
+
+            </td>
+            {{/if}}
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

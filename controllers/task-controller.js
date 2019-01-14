@@ -16,14 +16,14 @@ module.exports = function (app) {
 
         db.tasks.findAll(req.body).then(function (dbTask) {
             // console.log(dbTask.tasks.dataValues.id)
-            res.render("task", {
+            res.render("project-clone", {
                 tasks: dbTask,
                 user: req.user
             });
 
         });
 
-      
+
 
 
     });
@@ -40,9 +40,9 @@ module.exports = function (app) {
                 include: [db.projects],
                 where: {
                     projectId: req.params.id
-                  }
+                }
             }).then(function (dbTask) {
-                
+
 
                 res.render("task", {
                     tasks: dbTask,
@@ -59,9 +59,15 @@ module.exports = function (app) {
 
 
         db.tasks.findAll({
-            include: [db.projects],
+            include: [{
+                model: db.projectLog,
+                required:false
+
+            }],
+
             where: {
-                projectId: req.params.id
+                projectId: req.params.id,
+                '$projectLogs.taskId$': { $ne:null }
             }
         }).then(function (dbTask) {
 
@@ -69,7 +75,7 @@ module.exports = function (app) {
             res.json({
                 tasks: dbTask,
                 user: req.user,
-                
+
 
             });
         });
@@ -79,24 +85,33 @@ module.exports = function (app) {
 
 
 
-app.delete("/api/task/:id", function (req, res) {
-    var condition = "id = " + req.params.id;
+    app.delete("/api/task/:id", function (req, res) {
+        var condition = "id = " + req.params.id;
 
-    db.tasks.destroy({
-        where: {
-            id: req.params.id
-        }
-    }).then(function (dbTask) {
-        res.json(dbTask);
-    })
-        .catch(function (err) {
-            // handle error;
-            console.log("Error");
+        db.projectLog.destroy({
+            where: {
+                taskId: req.params.id
+            }
+        }).then(function (dbprojectLog)  {
+            db.tasks.destroy({
+                where: {
+                    id: req.params.id
+                }
+            }).then(function (dbTask) {
+                res.json(dbTask);
+            })
+                .catch(function (err) {
+                    // handle error;
+                    console.log("Error" + err);
+    
+    
+                });
 
+        })
 
-        });
+        
 
-});
+    });
 
 
 

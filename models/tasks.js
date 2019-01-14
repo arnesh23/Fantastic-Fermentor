@@ -21,6 +21,11 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false
       }
     });
+    
+    
+    tasks.hasMany(models.projectLog, {
+      onDelete: "cascade"
+    });
   };
   return tasks;
 };

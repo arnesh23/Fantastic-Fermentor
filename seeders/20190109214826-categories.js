@@ -30,11 +30,24 @@ module.exports = {
   }).then(function () { 
     return queryInterface.bulkInsert('projects', [
      { name: 'greek Yogurth', instructions: 'this is initial instruction to make yogurt' , createdAt: new Date(), updatedAt: new Date(), categoryId:1,statusId:1,UserId:1}
-     
-
- ], {}) ;
- 
- })
+ ], {});
+}) .then(function () { 
+  return queryInterface.bulkInsert('tasks', [
+   { 
+    taskNumber: "1",
+    name: "Task One",
+    picture: "",
+    description: "Description of the task",
+    timeSinceLastStep: "10",
+    timeUnits: "minutes",
+    cookingHardware: "hardware one",
+    duration: 10,
+    ingredients: "ingredient one",
+    steps:"step one", 
+     createdAt: new Date(), updatedAt: new Date(), 
+   projectId:1}
+], {});
+}) 
 
 
 

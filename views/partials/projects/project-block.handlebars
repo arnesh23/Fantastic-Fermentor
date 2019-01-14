@@ -2,7 +2,7 @@
   <tr>
     <th>Project Name</th>
     <th>General Instructions</th>
-    <th>Actions</th>
+    <th></th>
   </tr>
   
   {{#each projects}}
@@ -11,8 +11,8 @@
     <td>{{name}}</td>
     <td>{{instructions}}</td>
     <td>{{userId}}</td>
-    <td><a href='/task/{{id}}'>Add new task {{id}}</a>
-      <td> <span class='delbtn' data-id={{id}}> <button type=“button” > Delete Task</button></td></span>
+    <td><a href='/task/{{id}}'>Add new task </a>
+      <td> <span class='delbtn' data-id={{id}}> <button type=“button” > Delete </button></td></span>
        <td> <span class='updatebtn' data-id={{id}}> <button type=“button” > Update</button></td></span>
   </tr>
   {{/each}}
