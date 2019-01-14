@@ -1,7 +1,7 @@
 $(function () {
   var updateId = 0;   //updateId for PUT Request
 
-  $(document).on("submit",".submitButton", function (event) {
+  $(document).on("submit", ".submitButton", function (event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
@@ -22,51 +22,52 @@ $(function () {
     //console.log(newProject)
     //console.log("Hidden Value before if"+$("#hiddenid").attr("value"))
 
-    var  hiddenValue = $("#hiddenid").attr("value")
+    var hiddenValue = $("#hiddenid").attr("value")
     console.log("hiddenValue", hiddenValue === "1")
-    if(hiddenValue === "1"){                     // If update is clicked do a PUT request
-      console.log("ID in put"+updateId)
+    if (hiddenValue === "1") {                     // If update is clicked do a PUT request
+      console.log("ID in put" + updateId)
+      
       id = $("#hiddenid").attr("value")
       console.log("Put")
       // TODO: CONCATENATE CORRECT ID
-      $.ajax("/api/project/"+updateId, {
+      $.ajax("/api/project/" + updateId, {
         type: "PUT",
         data: newProject
-    }).then(function (results) {
-      console.log(results)
-      location.reload();
-      $("#hiddenid").val(0)
-    
-    });
-  } else{                                       // Else do a POST request
-    console.log("Add new")
-    // Send the POST request.
-    $.ajax("/api/register", {
-      type: "POST",
-      data: newProject
-    }).then(function () {
-      // Reload the page to get the updated list
-      location.reload();
-    });
-  }
+      }).then(function (results) {
+        console.log(results)
+        location.reload();
+        $("#hiddenid").val(0)
+
+      });
+    } else {                                       // Else do a POST request
+      console.log("Add new")
+      // Send the POST request.
+      $.ajax("/api/register", {
+        type: "POST",
+        data: newProject
+      }).then(function () {
+        // Reload the page to get the updated list
+        location.reload();
+      });
+    }
   });
 
 
 
   $("#addTask").on("click", function (event) {
     console.log("addtaskclick")
-//     $.ajax("/task", {
-//       type: "GET",
-//   }).then(function () {
-//           // Reload the page to get the updated list
-//           //location.reload();
-//       });  
+    //     $.ajax("/task", {
+    //       type: "GET",
+    //   }).then(function () {
+    //           // Reload the page to get the updated list
+    //           //location.reload();
+    //       });  
 
-  $("#addTask").on("click", function (event) {
-    res.render("task", {})
-  });
+    $("#addTask").on("click", function (event) {
+      res.render("task", {})
+    });
 
-// })
+    // })
     window.location = "/task/";
   })
 
@@ -80,27 +81,28 @@ $(function () {
     //console.log($(this).id)
     // Send the PUT request.
     $.ajax("/api/project/" + id, {
-        type: "DELETE"
+      type: "DELETE"
     }).then(
-        function () {
-            console.log("delete");
-            // Reload the page to get the updated list
-            location.reload();
-        }
+      function () {
+        console.log("delete");
+        // Reload the page to get the updated list
+        location.reload();
+      }
     );
   })
 
   $(".updatebtn").on("click", function (event) {
     //console.log("cliked update")
     //event.preventDefault();
+    $('#modal').show();
     console.log(this)
     var id = $(this).data('id')
     updateId = $(this).data('id')
-    console.log("updataIDDDDDD"+updateId)
-    console.log("hidden value:"+$("#hiddenid").attr("value"));
+    console.log("updataIDDDDDD" + updateId)
+    console.log("hidden value:" + $("#hiddenid").attr("value"));
     hiddenValue = $("#hiddenid").attr("value")
     $("#hiddenid").val(1)
-    
+
 
 
     $(".create-form").append("<input type=hidden id=hiddenid name=hiddenid value=1>")
@@ -114,23 +116,31 @@ $(function () {
 
     $.ajax("/api/project/" + id, {
       type: "GET"
-  }).then(function (results) {
-          //console.log(results)
-          console.log("result"+results);
-          console.log("id"+results.id);
-          console.log("Name"+results.name)
+    }).then(function (results) {
+      //console.log(results)
+      console.log("result" + results);
+      console.log("id" + results.id);
+      console.log("Name" + results.name)
 
-          $("#projectName").val(results.name)
-          $("#pictureURL").val(results.picture)
-          $("#ginstructions").val(results.instructions)
-          // Reload the page to get the updated list
-          //location.reload();
-          
+      $("#projectName").val(results.name)
+      $("#pictureURL").val(results.picture)
+      $("#ginstructions").val(results.instructions)
+      $("#customersList").val(results.categoryId)
+      $("#statusList").val(results.statusId)
 
-      console.log("hiddenValues:"+$("#hiddenid").attr("value"))
-     
-      
+      // Reload the page to get the updated list
+      //location.reload();
+
+
+      console.log("hiddenValues:" + $("#hiddenid").attr("value"))
+    })
   })
+  $("#addProject").on("click", function (event) {
+      console.log("addProjectclicked")
+      $('#modal').show();
+
   })
 
-})
+
+
+  })

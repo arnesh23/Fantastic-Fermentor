@@ -5,8 +5,6 @@ var db = require("../models")
 
 // Controller for first web-page
 
-
-
 module.exports = function (app) {
   app.get("/new", function (req, res) {
     if (req.user != null) {
@@ -34,30 +32,9 @@ module.exports = function (app) {
     } else {
       res.redirect("/login-user");
     }
-  });
-
-  app.put("/api/project/:id", function (req, res) {
-
-    console.log("ID to PUT:" + req.params.id)
-    console.log("\n===========================\n")
-
-    db.projects.update(
-      req.body,
-      {
-        where: {
-          id: req.params.id
-        }
-      }).then(function (dbProject) {
-        console.log("UPDATED",dbProject)
-        res.json(dbProject);
-      });
-  });
-
-
-  }
-
+  });  
+}
 //Controller for second webpage
 
 /*
   */
- 
