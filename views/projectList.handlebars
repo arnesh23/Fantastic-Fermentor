@@ -1,7 +1,7 @@
 {{#if viewMy}}
-<h3 class="text-center">{{user.username}} projects</h3>
+<h3 class="text-center">{{user.username}}'s Projects</h3>
 {{else}}
-<h3 class="text-center">Projects to Use</h3>
+<h3 class="text-center">Fermentation Library</h3>
 {{/if}}
 
 
@@ -12,7 +12,7 @@
         <tr>
 
             <th>Project Name </th>
-            <th>General Instructions</th>
+            <th>Overview</th>
             <th></th>
 
         </tr>
@@ -24,7 +24,7 @@
             <td> {{name}}</td>
             <td> {{instructions}}</td>
             {{#unless ../viewMy}}
-            <td><i class="far fa-check-circle"></i> <a href="/project/{{id}}/projectlog"> Use This Project</a></td>
+            <td><i class="far fa-check-circle"></i> <a href="/project/{{id}}/projectlog"> Start This Project</a></td>
             {{/unless}}
             {{#if ../viewMy}}
             <td>

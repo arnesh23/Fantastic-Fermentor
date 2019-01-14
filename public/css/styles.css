@@ -20,3 +20,11 @@
     display: table;
     clear: both;
   }
+
+  .auth-image {
+    float: left;
+  }
+ 
+  .top-bar {
+    height: 150px;
+  }
