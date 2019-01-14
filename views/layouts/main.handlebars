@@ -32,42 +32,51 @@
 
 <body>
     {{#if user}}
-
-    <p style="color:sandybrown; float:right;"> <strong>{{user.username}}</strong> <a class="user"></a></p>
-    <nav class="nav-bar" style="background-color:white; padding:20px; margin: 10px;">
-        <section class="top-bar">
+    
+    <nav class="nav-bar" style="background-color:white; padding:2px; ">
+      
+        <section class="top-bar" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
             <div id="logo">
-                <img src="/photos/logo.png" class="auth-image" alt="logo" width="22%" height="32%" data-pin-nopin="true">
-                <button class="logout" data-tracking="Sign In" title="Sign in" href="#" aria-label="Sign in" style=" color:sandybrown;  transform: translateY(4px); border: 3px solid orange; padding: 0 3em; height: 30px; margin-left:60%;
+                    
+                <img src="/photos/logo.png" class="auth-image" alt="logo" width="17%" height="27%" data-pin-nopin="true">
+                <div style="color:sandybrown;margin-left:62%;">Logged in as: {{user.username}}<a class="user"></a></div>
+                <a href="/myprojects">
+                <button class="profile" data-tracking="My Profile" title="Profile"  aria-label="Profile" style="color:sandybrown; transform: translateY(4px); border:1.5px solid orange; margin-left:45%;">My Projects</button></a>
+                 <a href="/new">
+                <button class="newproject" data-tracking="new" title="newproject" hrer="/new" aria-label="New" style="color:sandybrown; transform: translateY(4px); border: 1.5px solid orange;">Create a Project</button>
+                </a>
+                 <a href="/projectlist">
+                <button class="recipes" data-tracking="recipes" title="Recipes" href="/projectlist" aria-label="Recipes" style="color:sandybrown; transform:translateY(4px); border:1.5px solid orange; heigth:30px;">All Recipes</button>
+                </a>
+                <button class="logout" data-tracking="Sign In" title="Sign in" href="#" aria-label="Sign in" style=" color:sandybrown;  transform: translateY(4px); border: 1.5px solid orange; 
                          font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; background-color: transparent; ">
                     Log Out</button>
-
-        </section>
+       
         </div>
+        </section>
     </nav>
-
     {{else}}
-    <nav class="nav-bar" style="background-color:white; padding:20px; margin: 10px;">
+     <nav class="nav-bar" style="background-color:white; padding:2px; ">
         <section class="top-bar">
             <div id="logo">
-                <img src="/photos/logo.png" class="auth-image" alt="logo" width="22%" height="32%" data-pin-nopin="true">
-
-             <a href="/register-user"> <button class="button login"  style=" color:sandybrown; margin:25px 40px 40px; transform: translateY(4px); border: 3px solid orange; padding: 0 3em; height: 30px; margin-left:60%; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; background-color: transparent; ">Sign
+                <img src="/photos/logo.png" style="margin-right:35%;" class="auth-image" alt="logo" width="17%" height="27%" data-pin-nopin="true">
+             <a href="/login-user"> <button class="button login"  style=" color:sandybrown; margin:25px 10px 40px; transform: translateY(4px); border: 1.5px solid orange; padding: 0 3em; height: 30px; margin-left:90px; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; background-color: transparent; ">Log
                     In</button></a>
-
+             <a href="/login-user"> <button class="button login"  style=" color:sandybrown; transform: translateY(4px); border: 1.5px solid orange; padding: 0 3em; height: 30px; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; background-color: transparent; ">Sign
+                    Up</button></a>
         </section>
         </div>
     </nav>
     {{/if}}
     {{{body}}}
-    <div class="home-page-footer" style="margin:10px; text-align:center;">
+   <div class="home-page-footer" style="margin:10px; text-align:center;">
         <nav class="nav-footer" style="background-color:rgb(226, 221, 221);">
             <div class="link-section-columns">
                 <div class="column">
                     <div class="footer-section">
                         <div class="title" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; letter-spacing:3.5px; color:rgb(240, 121, 16)">Support</div>
                         <a class="footer-link" title="ferMentor" aria-label="About ferMentor" href="/about" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">About
-                            ferMentor</a>
+                            FerMentor</a>
                         <br>
                         <a class="footer-link" title="Contact Us" aria-label="Contact Us" href="/about#contact" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serifl">Contact
                             Us</a>
@@ -77,32 +86,33 @@
                     <div class="column">
                         <div class="footer-section">
                             <div class="title" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; letter-spacing:3.5px; color:rgb(240, 121, 16)">Tools</div>
-                            <span class="footer-link" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">FAQs</span>
+                            <a class="footer-link" href="/FAQs" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">FAQs</a>
                         </div>
                     </div>
-
                     <div class="title social-media-title" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; letter-spacing:3.5px; color:rgb(240, 121, 16);">Follow
                         Us</div>
                     <div class="social-media-links"><a id="qa-social-facebook" href="https://facebook.com" title="ferMentor on Facebook"
                             aria-label="ferMentor on Facebook" target="_blank" rel="noopener nofollow"><span class="y-icon social-link-icon"
                                 data-icon="f"></span>
-                            <span class="screen-reader-text" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">ferMentor
-                                on Facebook</span></a>
-                        <br>
+                            <span class="screen-reader-text" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size:33px;">
+                                 <i class="fab fa-facebook" ></i></span></a>
+                        
                         <a id="qa-social-pinterest" href="https://pinterest.com" title="ferMentor on Pinterest" aria-label="ferMentor on Pinterest"
                             target="_blank" rel="noopener nofollow"><span class="y-icon social-link-icon" data-icon="p"></span><span
-                                class="screen-reader-text" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">ferMentor
-                                on Pinterest</span></a>
-                        <br>
+                                class="screen-reader-text" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size:33px;">
+                                 <i class="fab fa-pinterest"></i></span></a>
+                        
                         <a id="qa-social-instagram" href="https://instagram.com" title="ferMentor on Instagram" aria-label="ferMentor on Instagram"
                             target="_blank" rel="noopener nofollow"><span class="y-icon social-link-icon" data-icon="i"></span><span
-                                class="screen-reader-text" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">ferMentor
-                                on Instagram</span></a>
-                        <br>
+                                class="screen-reader-text" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size:33px;">
+                                 <i class="fab fa-instagram"></i></span></a>
+                        
                         <a id="qa-social-youtube" href="https://www.youtube.com" title="ferMentor on YouTube" aria-label="ferMentor on YouTube"
                             target="_blank" rel="noopener nofollow"><span class="y-icon social-link-icon" data-icon="u"></span><span
-                                class="screen-reader-text" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">ferMentor
-                                on YouTube</span></a></div>
+                                class="screen-reader-text" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size:33px;">
+                                 <i class="fab fa-youtube"></i></span></a></div>
+                                 <br>
+                                 
                 </div>
             </div>
     </div>
@@ -113,3 +123,4 @@
 </body>
 
 </html>
+
