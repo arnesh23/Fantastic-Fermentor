@@ -1,15 +1,14 @@
-
-<div class="col-md-6 order-md-2 mt-4">
+<div class="col-md-6 order-md-2 ">
     <h4 class="d-flex">
         <span class="text-muted">Task List
             {{#if clone}}
-- Add your own notes {{projectId}}
-                {{/if}}
-            
-             </span>
+            - Add your own notes
+            {{/if}}
+
+        </span>
 
     </h4>
-    
+
     {{#if clone}}
     <form class="clone-form">
         {{/if}}
@@ -19,11 +18,11 @@
             <li class="list-group-item d-flex justify-content-between lh-condensed">
                 <div>
 
-                    <h6 class="my-0"> {{id}}
-                        Task Number: {{taskNumber}} - Name:{{name}}  <br>
+                    <h6 class="my-0"> 
+                        Task Number: {{taskNumber}} - Name: {{name}} <br>
                     </h6>
                     {{#if ../clone}}
-                    <textarea class="form-control notes" id="note" rows="3" data-attr={{id}}></textarea>
+                    <textarea class="form-control notes mt-2" id="note" rows="3" cols=50 data-attr={{id}}></textarea>
 
                     <input type="hidden" id="idProject" value={{projectId}}>
                     <input type="hidden" id="idUser" value={{../user.id}}>
@@ -42,8 +41,9 @@
                                     description: {{description}}<br>
                                     time Since Last Step: {{timeSinceLastStep}}<br>
                                     time Units: {{timeUnits}} <br>
-                                    cooking Hardware:<br> {{{ cookingHardware}}} <br>
                                     duration: {{duration}} <br>
+                                    cooking Hardware:<br> {{{ cookingHardware}}} <br>
+
                                     ingredients:<br>{{{ingredients}}} <br>
                                     steps:<br>{{{steps}}}<br>
                                 </div>
@@ -75,7 +75,7 @@
 
         </ul>
         {{#if clone}}
-        <button type="submit" class="btn btn-primary">Add notes</button>
+        <button type="submit" class="btn btn-primary">Add my notes</button>
     </form>
     {{/if}}
 </div>

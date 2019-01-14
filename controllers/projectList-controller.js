@@ -26,7 +26,8 @@ module.exports = function (app) {
 
                 ], where:
                 {
-                    '$projectLogs.projectId$': null
+                    '$projectLogs.projectId$': null,
+                    statusId:1
 
                 },
 
@@ -70,7 +71,7 @@ module.exports = function (app) {
         // console.log("Keys" + keys);
         db.projectLog.bulkCreate(req.body.myArray).then(function (dbProjectLog) {
             //uncomment this to have 
-            console.log("entra");
+            
             res.json(dbProjectLog);
 
 

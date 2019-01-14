@@ -12,7 +12,13 @@ module.exports = function (app) {
     if (req.user != null) {
 
       db.categories.findAll({}).then(function (categoriesDB) {
-        db.projects.findAll({}).then(function (projectsDB) {
+        db.projects.findAll({
+          where: { 
+          
+            userId: req.user.id
+
+        }
+        }).then(function (projectsDB) {
           db.status.findAll({}).then(function (statusesDB) {
 
             //console.log("categories:"+categoriesDB+"projects"+projectsDB)
