@@ -11,31 +11,18 @@ module.exports = function (app) {
     app.get("/projectList", function (req, res) {
         if (req.user != null) {
             db.projects.findAll({
-
                 include: [{
                     model: db.projectLog,
-                    where:
-                    {
-                        '$projectLogs.UserId$': req.user.id
-
-                    },
+                    where: { '$projectLogs.UserId$': req.user.id },
                     required: false,
-
-                },
-
-
-                ], where:
+                }], where:
                 {
                     '$projectLogs.projectId$': null,
-                    statusId:1
-
+                    statusId: 1
                 },
-
-
             }).then(function (projectsDB) {
 
                 res.render("projectList", {
-
                     projects: projectsDB,
                     user: req.user
                 })
@@ -65,22 +52,12 @@ module.exports = function (app) {
 
     app.post("/projectList/projectLog/:id", function (req, res) {
 
-        // console.log(JSON.parse(req.body))
-        console.log("ID PROJECT" + req.params.id)
-
-        // console.log("Keys" + keys);
         db.projectLog.bulkCreate(req.body.myArray).then(function (dbProjectLog) {
-            //uncomment this to have 
-            
             res.json(dbProjectLog);
-
-
         }).catch(function (err) {
             // handle error;
             console.log(err)
         });
-
-
     })
 
 }

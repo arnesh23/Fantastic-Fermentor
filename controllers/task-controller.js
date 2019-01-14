@@ -12,21 +12,6 @@ module.exports = function (app) {
 
     });
 
-    app.get("/task", function (req, res) {
-
-        db.tasks.findAll(req.body).then(function (dbTask) {
-            // console.log(dbTask.tasks.dataValues.id)
-            res.render("project-clone", {
-                tasks: dbTask,
-                user: req.user
-            });
-
-        });
-
-
-
-
-    });
 
     app.get("/task/:id", function (req, res) {
 
@@ -35,15 +20,12 @@ module.exports = function (app) {
                 id: req.params.id
             }
         }).then(function (dbProject) {
-
             db.tasks.findAll({
                 include: [db.projects],
                 where: {
                     projectId: req.params.id
                 }
             }).then(function (dbTask) {
-
-
                 res.render("task", {
                     tasks: dbTask,
                     user: req.user,
@@ -62,7 +44,6 @@ module.exports = function (app) {
             include: [{
                 model: db.projectLog,
                 required: false
-
             }],
 
             where: {
@@ -71,8 +52,6 @@ module.exports = function (app) {
                 '$projectLogs.userId$': req.user.id
             }
         }).then(function (dbTask) {
-
-
             res.json({
                 tasks: dbTask,
                 user: req.user,
