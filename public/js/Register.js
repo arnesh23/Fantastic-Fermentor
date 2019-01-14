@@ -53,7 +53,6 @@ $(function () {
   });
 
 
-
   $("#addTask").on("click", function (event) {
     console.log("addtaskclick")
     //     $.ajax("/task", {
@@ -94,7 +93,7 @@ $(function () {
   $(".updatebtn").on("click", function (event) {
     //console.log("cliked update")
     //event.preventDefault();
-    $('#modal').show();
+    $('#modal').toggle();
     console.log(this)
     var id = $(this).data('id')
     updateId = $(this).data('id')
@@ -140,7 +139,4 @@ $(function () {
       $('#modal').show();
 
   })
-
-
-
   })
