@@ -18,6 +18,10 @@ module.exports = function (app) {
                 include: [{
                     model: db.projectLog,
                     required: false,
+                },{
+                    model: db.User,
+                   
+                  
                 }
                 ], where: { '$projectLogs.userId$': req.user.id }
 

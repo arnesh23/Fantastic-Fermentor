@@ -10,12 +10,18 @@ var db = require("../models")
 module.exports = function (app) {
     app.get("/projectList", function (req, res) {
         if (req.user != null) {
+           
             db.projects.findAll({
                 include: [{
                     model: db.projectLog,
                     where: { '$projectLogs.UserId$': req.user.id },
                     required: false,
-                }], where:
+                },{
+                    model: db.User,
+                   
+                  
+                } ]
+                ,  where:
                 {
                     '$projectLogs.projectId$': null,
                     statusId: 1

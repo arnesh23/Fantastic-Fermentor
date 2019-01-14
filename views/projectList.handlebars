@@ -10,7 +10,7 @@
 
     <thead class="table-info">
         <tr>
-
+            <th>User Owner</th>
             <th>Project Name </th>
             <th>Overview</th>
             <th></th>
@@ -20,7 +20,7 @@
     <tbody>
         {{#each projects}}
         <tr>
-
+            <td>{{User.username}}</td>
             <td> {{name}}</td>
             <td> {{instructions}}</td>
             {{#unless ../viewMy}}
