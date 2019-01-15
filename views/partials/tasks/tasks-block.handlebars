@@ -13,7 +13,7 @@
     <form class="clone-form">
         {{/if}}
         <ul class="list-group mb-3">
-
+            <!--iterate through the tasks-->
             {{#each tasks}}
             <li class="list-group-item d-flex justify-content-between lh-condensed">
                 <div>
@@ -21,6 +21,7 @@
                     <h6 class="my-0"> 
                       <b>  Task Number: {{taskNumber}} - Name: {{name}} </b><br>
                     </h6>
+                     <!--verify the clone flag from the controller-->
                     {{#if ../clone}}
                     <textarea class="form-control notes mt-2" id="note" rows="3" cols=50 data-attr={{id}}></textarea>
 

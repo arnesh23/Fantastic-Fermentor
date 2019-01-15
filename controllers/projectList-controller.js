@@ -39,12 +39,14 @@ module.exports = function (app) {
     })
 
     app.get("/project/:id/projectLog", function (req, res) {
-
+        //Find all tasks to be inserted on the log
         db.tasks.findAll({
             where: {
                 projectId: req.params.id
             }
         }).then(function (tasksDB) {
+            //send flag to handlebars to display
+            // items based on the flag
             var clone = true;
             res.render("partials/tasks/tasks-block", {
 

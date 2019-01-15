@@ -10,6 +10,7 @@ module.exports = async function(req, res, next) {
   // If there is one, we attach it to the req object so any
   // following middleware or routing logic will have access to
   // the authenticated user.
+  
   if (token) {
     
     // look for an auth token that matches the cookie or header

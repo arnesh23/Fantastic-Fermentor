@@ -6,26 +6,28 @@ module.exports = function (app) {
     app.post("/api/task/:id", function (req, res) {
         console.log("add")
         db.tasks.create(req.body).then(function (dbTask) {
+
             res.json(dbTask);
         });
 
 
     });
 
-
-    app.get("/task/:id", function (req, res) {
-
+     app.get("/task/:id", function (req, res) {
+        //Find a specific project
         db.projects.findOne({
             where: {
                 id: req.params.id
             }
         }).then(function (dbProject) {
+            //Find all the tasks for the project
             db.tasks.findAll({
                 include: [db.projects],
                 where: {
                     projectId: req.params.id
                 }
             }).then(function (dbTask) {
+                //render the page that contains a partial
                 res.render("task", {
                     tasks: dbTask,
                     user: req.user,
@@ -33,7 +35,6 @@ module.exports = function (app) {
 
                 });
             });
-
         });
     });
 
@@ -55,8 +56,6 @@ module.exports = function (app) {
             res.json({
                 tasks: dbTask,
                 user: req.user,
-
-
             });
         });
 

@@ -110,13 +110,12 @@ $(function () {
 
 
     $(".clone-form").on("submit", function (event) {
-        // Make sure to preventDefault on a submit event.
         event.preventDefault();
-         var arrayLog = [];
+        var arrayLog = [];
         var project_id = $("#idProject").val();
-       
+        //Have an array of objects 
         $('.notes').each(function (index, element) {
-              arrayLog.push({
+            arrayLog.push({
                 projectId: project_id,
                 UserId: $("#idUser").val(),
                 taskId: $(this).data("attr"),
@@ -124,7 +123,7 @@ $(function () {
             });
         });
 
-        // Send the POST request.
+        // Send the POST request. with the array to bulk insertion
         $.ajax("/projectList/projectLog/" + project_id, {
             type: "POST",
             dataType: 'json',
@@ -132,10 +131,10 @@ $(function () {
             //data: JSON.stringify(arrayLog)
         }).then(
             function () {
-              location.href = "/myprojects"
+                location.href = "/myprojects"
             }
         );
-      });
+    });
 
 
 })

@@ -23,7 +23,7 @@ $(function () {
                 "<b>Steps:</b><br>" + taskDetail.ingredients + "<br>"  + "<b>My Note: </b> <br>" + taskDetail.projectLogs[0].note + "<br><hr>"
                 htmlModal+=htmlTaskTitle + htmlTaskDetails  
          }
-             $("#taskDetail" +id).html(htmlModal);
+            $("#taskDetail" +id).html(htmlModal);
             $('#exampleModal'+id).modal('toggle');
             $('#exampleModal'+id).modal('show');
          });
