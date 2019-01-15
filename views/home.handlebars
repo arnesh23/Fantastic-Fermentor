@@ -1,6 +1,4 @@
-{{#if user}}
 
-{{/if}}
 <div class="page" style="background-color:white; position:relative; width:100%;">
     <div class="home-page-promo" style="margin:0; padding:0; border:0; vertical-align:baseline;">
 
@@ -19,9 +17,13 @@
                     <br>
                     Create your own fermentation profile where you are able to collect fermatation apps as well as
                     creating your very own for the rest of the world to see. </p>
-                <button class="btn-tertiary promo-cta" data-tracking="CTA1" title="Join Now for Free" aria-label="Join Now for Free"
+                    {{#unless user}}
+
+
+                <a href="/register-user"><button class="btn-tertiary promo-cta" data-tracking="CTA1" title="Join Now for Free" aria-label="Join Now for Free"
                     style="padding: 0 2em; height:60px; color:white; display:inline-block; font-size:35px; border-color:black 3px; background-color:sandybrown; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-bottom:20px; margin-top:50px; ">Join
-                    Now for Free</button>
+                    Now for Free</button></a>
+                    {{/unless}}
             </div>
         </section>
         <section class="nav-section feautures-section" style="margin:10px; text-align:center;">
