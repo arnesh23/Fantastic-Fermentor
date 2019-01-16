@@ -14,18 +14,17 @@
 
   Users are only able to view all the recipes available in our database and also publish their own if they have a FerMentor account. We used bcrypt for our password hashing function, with the use of simple database authentication, each request makes a call to the database to match a user with an authentication token. The use of bcrypt allowed us to create our user Sign Up/ Log In authentication. 
 
-(Giphy about registering and loggin in)
+![Sign Up & Login](public/photos/sign-up-login.gif "Sign up, log in, and start fermenting!")
 
 
 
 After user has successfully created a FerMentor account, they are able to see all the fermentation recipes available that other users have published and choose a recipe to start. Users can view their personal fermentation projects if they click on the button 'My Projects', which displays the current projects they are working on or any recipe they have previously published.
 
-(Giphy about how user goes to their projects page an also )
-
+![All Recipes & My Projects](public/photos/all-recipes-my-projects.gif "See all available recipes and projects you're working on.")
 
  User also has the option to create a new project by clicking on the button 'Create a Project'. This will take the user into the new project page where they're able to add a new project by choosing the category of recipe, the status of their project(published/unplublished), name of the project, picture and general instructions. Since fermentation is a long known process, we decided it would be ideal to place evey recipe into either a Quick & Easy or Long & Complicated category. 
 
-(Giphy about how the user is able to create a new recipe and publish it)
+![Create Project](public/photos/create-project.gif "Create your own projects already!")
 
 After user has successfully published a recipe we send them an email notification using @sendgrid/mail API. 
 
