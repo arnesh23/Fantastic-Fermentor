@@ -12,7 +12,7 @@ var cookieParser = require('cookie-parser');
 var exphbs = require('express-handlebars');
 var customAuthMiddleware = require('./middleware/custom-auth-middleware');
 var app = express();
-var PORT = process.env.PORT || 8090;
+var PORT = process.env.PORT || 8080;
 
 var db = require("./models")
 

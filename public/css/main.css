@@ -55,10 +55,97 @@ body {
     margin-left: 15px;
   }
   
-  .login-form .login {
+  .login-form .login .signup .signup-form{
     flex: 2;
+    color:sandybrown; 
+    font-family:"Cambria, Cochin, Georgia, Times, 'Times New Roman', serif" ;
   }
   
-  .signup-form .signup {
-    flex: 2;
+
+  .nav-bar {
+    font-family:"Cambria, Cochin, Georgia, Times, 'Times New Roman', serif";
   }
+
+  .top-bar {
+    font-family:"Cambria, Cochin, Georgia, Times, 'Times New Roman', serif";
+  }
+#username {
+  color:sandybrown;margin-left:62%;
+}
+
+#profile {
+  color:sandybrown; transform: translateY(4px); 
+  border:1.5px solid orange; margin-left:45%;
+}
+
+#newProject {
+  color:sandybrown; transform: translateY(4px); 
+  border: 1.5px solid orange;
+}
+
+#allRecipies {
+  color:sandybrown; 
+  transform:translateY(4px); border:1.5px solid orange; heigth:30px;
+}
+
+#logoutUser {
+  color:sandybrown;  transform: translateY(4px); border: 1.5px solid orange; 
+  font-family:"Cambria, Cochin, Georgia, Times, 'Times New Roman', serif"; background-color: transparent; 
+}
+
+#logIn{
+  color:sandybrown; margin:25px 10px 40px; transform: translateY(4px);
+   border: 1.5px solid orange;
+    padding: 0 3em; 
+    height: 30px; 
+    margin-left:90px; font-family:"Cambria, Cochin, Georgia, Times, 'Times New Roman', serif"; 
+    background-color: transparent; 
+}
+
+#registerUser {
+  color:sandybrown; transform: translateY(4px); border: 1.5px solid orange; padding: 0 3em; height: 30px; font-family:"Cambria, Cochin, Georgia, Times, 'Times New Roman', serif"; background-color: transparent;
+}
+
+#alignMargin{
+   margin:10px;
+   text-align:center;
+}
+
+.titleFooter {
+  font-family:"Cambria, Cochin, Georgia, Times, 'Times New Roman', serif"; letter-spacing:3.5px; 
+  color:rgb(240, 121, 16)
+}
+
+#followUs {
+font-family:"Cambria, Cochin, Georgia, Times, 'Times New Roman', serif"; letter-spacing:3.5px; 
+color:rgb(240, 121, 16);
+}
+
+.socialIcons {
+  font-family:"Cambria, Cochin, Georgia, Times, 'Times New Roman', serif"; font-size:33px;
+}
+
+.tableHeader {
+  font-family:"Cambria, Cochin, Georgia, Times, 'Times New Roman', serif";
+}
+
+#tableRow {
+  background-color:sandybrown; 
+  color:white; 
+  text-align:center;
+
+}
+
+#tableRowAdd{
+  background-color: white
+}
+
+#navFooter {
+  background-color:rgb(226, 221, 221);
+}
+
+.signUpForm{
+ 
+  font-family:"Cambria, Cochin, Georgia, Times, 'Times New Roman', serif";
+  color:sandybrown; 
+}
