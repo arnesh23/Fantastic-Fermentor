@@ -38,7 +38,8 @@ Below is a code snippet of the use of SendGrid/Mail:
 ## Model View Controller
  FerMentor was created with the MVC pattern logic, to clearly define the application logic, data and presentation into distinct components. Below is our MVC diagram which shows the used models, such as the user model, tasks,projects, etc.
 
-![alt text](public/photos/mvc.jpeg)
+![alt text](public/photos/Diagram.png)
+
 
 (Add code snippets of models)
 
