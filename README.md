@@ -12,7 +12,7 @@
 
  ### Getting Started
 
-  Users are only able to view all the recipes available in our database and also publish their own if they have a FerMentor account. Therefore, we used bcrypt for our password hashing function, with the use of simple database authentication, each request makes a call to the database to match a user with an authentication token. The use of bcrypt allowed us to create our user Sign Up/ Log In authentication. 
+  Users are only able to view all the recipes available in our database and also publish their own if they have a FerMentor account. We used bcrypt for our password hashing function, with the use of simple database authentication, each request makes a call to the database to match a user with an authentication token. The use of bcrypt allowed us to create our user Sign Up/ Log In authentication. 
 
 (Giphy about registering and loggin in)
 
@@ -23,11 +23,19 @@ After user has successfully created a FerMentor account, they are able to see al
 (Giphy about how user goes to their projects page an also )
 
 
- User also has the option to create a new project by clicking on the button 'Create a Project'. This will take the user into the new project page where they're able to add a new project by choosing the category of recipe, the status of their project(published/unplublished), name of the project, picture and general instructions. Since fermentation is a long known process, we decided it would be ideal to place evey recipe into either a Quick & Easy or Long & Complicated category.
+ User also has the option to create a new project by clicking on the button 'Create a Project'. This will take the user into the new project page where they're able to add a new project by choosing the category of recipe, the status of their project(published/unplublished), name of the project, picture and general instructions. Since fermentation is a long known process, we decided it would be ideal to place evey recipe into either a Quick & Easy or Long & Complicated category. 
 
 (Giphy about how the user is able to create a new recipe and publish it)
 
-### Model View Controller
+After user has successfully published a recipe we send them an email notification using @sendgrid/mail API. 
+
+![alt text](public/photos/grid.png)
+
+Below is a code snippet of the use of SendGrid/Mail:
+![alt text](public/photos/sendgrid.png)
+
+
+## Model View Controller
  FerMentor was created with the MVC pattern logic, to clearly define the application logic, data and presentation into distinct components. Below is our MVC diagram which shows the used models, such as the user model, tasks,projects, etc.
 
 ![alt text](public/photos/mvc.jpeg)
@@ -37,6 +45,9 @@ After user has successfully created a FerMentor account, they are able to see al
 
 ### Migrations
 We used migrations to direct user to the registration page, to create a project page, create a task, etc. 
+
+![alt text](public/photos/migrations.jpeg)
+
 
 ### Database
 We used mysql workbench for our database, to save the recipes data that users input once they start making a fermentation recipe. 
@@ -54,11 +65,11 @@ https://fermentor.herokuapp.com/
 * Bcrypt - Creating a UI 
 * Mysql2 - Make server side SQL queries
 * Sequelize - ORM for SQL database
-* Sequelize-cli - 
+* Sequelize-cli - Migration
 * @sendgrid/mail - email notifications
 * Body-parser - request parsing middleware
-* Path -
-* Dotenv - 
+* Path - will set your PATH
+* Dotenv - zero dependecy module
 
 ## Built With
 * HTML5 & CSS3
@@ -67,7 +78,7 @@ https://fermentor.herokuapp.com/
 * Express.js
 * Handlebars
 
-### Authors
+## Authors
 # Vivian Aguilar, Maira Jimenez, Lyle A Xander Farell, Arnesh Regmi. 
 
 ## Acknowledgments 
