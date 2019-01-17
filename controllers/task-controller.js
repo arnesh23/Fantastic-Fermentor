@@ -3,17 +3,17 @@ var db = require("../models")
 // Controller for first web-page
 
 module.exports = function (app) {
+    //Create a task
     app.post("/api/task/:id", function (req, res) {
-        console.log("add")
-        db.tasks.create(req.body).then(function (dbTask) {
 
+        db.tasks.create(req.body).then(function (dbTask) {
             res.json(dbTask);
         });
 
 
     });
 
-     app.get("/task/:id", function (req, res) {
+    app.get("/task/:id", function (req, res) {
         //Find a specific project
         db.projects.findOne({
             where: {
@@ -38,6 +38,7 @@ module.exports = function (app) {
         });
     });
 
+    //Get the detail inforation of the task to render in the modal in /myprojects
     app.get("/task/:id/modal", function (req, res) {
 
 
@@ -63,7 +64,7 @@ module.exports = function (app) {
 
 
 
-
+    //delete a task
     app.delete("/api/task/:id", function (req, res) {
         var condition = "id = " + req.params.id;
 

@@ -50,7 +50,83 @@ We used migrations to direct user to the registration page, to create a project 
 
 
 ### Database
-We used mysql workbench for our database, to save the recipes data that users input once they start making a fermentation recipe. 
+We used mysql for our database, to save the recipes data that users input once they start making a fermentation recipe. 
+
+
+### Project Structure
+```
+    .
+├── config
+│   ├── config.json
+│  
+│ 
+├── controllers
+│   └── Fermentor_controller.js
+│   └── myprojects-controller.js
+│   └── projectList-controller.js
+│   └── projectManagement_controller.js
+│   └── register-controller.js
+│   └── task-controller.js
+│   └── user-controller.js
+│   └── views-controller.js
+├── middleware
+│   └── custom-auth-middleware.js
+│ 
+├── migrations
+│   └── 20190107222459-create-user.js
+│   └── 20190107223633-create-project-log.js
+│   └── 20190107223722-create-categories.js
+│   └── 20190107223823-create-projects.js
+│   └── 20190107224248-create-tasks.js
+│   └── 20190107224325-create-status.js
+│ 
+├── models
+│   ├── authtoken.js
+│   └── categories.js
+│   └── index.js
+│   └── projectlog.js
+│   └── projects.js
+│   └── status.js
+│   └── tasks.js
+│   └── user.js
+│
+├── node_modules
+│ 
+├── package.json
+│
+├── public
+│   └── assets
+│       ├── css
+│       │   └── main.css
+│       │   └── styles.css
+│       └── photos
+│       └── js
+│           └── form.js
+│           └── mynotes.js
+│           └── Register.js
+│           └── task.js
+│
+├── seeders
+│   └── 20190109214826-categories
+│   └── 20190111202130-project-log
+│ 
+└── views
+│   └── layouts
+│       └── main.handlebars
+│       └── NewProjectPage.handlebars
+│       └── projectList.handlebars
+│       └── projectManagement.handlebars
+│       └── register.handlebars
+│       └── task.handlebars
+│       └── home.handlebars
+│       └── partials
+│            └── projects
+│            │       └── project-block.handlebars.js
+│            └── tasks
+│                    └── tasks-block.handlebars.js
+├── server.js
+``` 
+
 
 ### Deployment 
 To deploy our app we used Heroku.
@@ -60,6 +136,7 @@ https://fermentor.herokuapp.com/
 
 
 ## NPM Packages Used
+```
 * Express - Server side framework
 * Express-handlebars - Templates for HTML
 * Bcrypt - Creating a UI 
@@ -70,6 +147,7 @@ https://fermentor.herokuapp.com/
 * Body-parser - request parsing middleware
 * Path - will set your PATH
 * Dotenv - zero dependecy module
+```
 
 ## Built With
 * HTML5 & CSS3
@@ -79,7 +157,10 @@ https://fermentor.herokuapp.com/
 * Handlebars
 
 ## Authors
-# Vivian Aguilar, Maira Jimenez, Lyle A Xander Farell, Arnesh Regmi. 
+* Vivian Aguilar
+* Maira Jimenez
+* Lyle A Xander Farell 
+* Arnesh Regmi. 
 
 ## Acknowledgments 
 

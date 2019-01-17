@@ -1,6 +1,8 @@
+{{!-- Partial for display tasks --}}
 <div class="col-md-6 order-md-2 ">
     <h4 class="d-flex">
         <span class="text-muted">Task List
+            {{!-- Clone will handle the display after /projectlist start this project click--}}
             {{#if clone}}
             - Add your own notes
             {{/if}}
@@ -8,7 +10,8 @@
         </span>
 
     </h4>
-
+     {{!-- Clone will handle the display after /projectlist start this project click--}}
+     {{!-- Display the form if clone--}}
     {{#if clone}}
     <form class="clone-form">
         {{/if}}
