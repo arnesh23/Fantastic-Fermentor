@@ -42,13 +42,6 @@ Below is a code snippet of the use of SendGrid/Mail:
 
 (Add code snippets of models)
 
-
-### Migrations
-We used migrations to direct user to the registration page, to create a project page, create a task, etc. 
-
-![alt text](public/photos/migrations.jpeg)
-
-
 ### Database
 We used mysql for our database, to save the recipes data that users input once they start making a fermentation recipe. 
 
