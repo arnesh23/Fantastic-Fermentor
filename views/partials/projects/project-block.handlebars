@@ -1,6 +1,6 @@
-<table class="table table-sm table-striped w-50 pb-10 " align="center" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+<table class="table table-sm table-striped w-50 pb-10 tableHeader " align="center" >
   <thead>
-    <tr style="background-color:sandybrown; color:white; text-align:center;">
+    <tr id="tableRow">
       <th>Project Name</th>
       <th>General Instructions</th>
       <th> </th>
@@ -9,10 +9,10 @@
       <th> </th>
     </tr>
   </thead>
+  {{!-- Partial for display list of projects in /new --}}
   <tbody>
     {{#each projects}}
     <tr>
-
       <td>{{name}}</td>
       <td>{{instructions}}</td>
       <td>{{userId}}</td>
@@ -22,7 +22,7 @@
     </tr>
     {{/each}}
     
-    <tr style="background-color: white">
+    <tr id="tableRow">
       <td colspan=2><button type="button" id = "addProject" class="btn btn-primary" > Add New Project </button></td>
       <td></td>
       <td></td>

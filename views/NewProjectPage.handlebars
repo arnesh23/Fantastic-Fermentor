@@ -1,6 +1,7 @@
-<div class="header" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; ">
+{{!-- /new Add new projects--}}
+<div class="header tableHeader">
     <h1>Add New Project</h1>
-
+     {{!-- Modal to display a form for input fields for project new--}}
     <div class="modal" id="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -52,19 +53,19 @@
                     <input type="hidden" id="userid" value={{user.id}}><br>
                     <form class="submitButton">
                         <input type="submit" value="Submit" class="btn btn-primary" id="submitbutton">
-                        <button type="button" id = "closeButton" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" id="closeButton" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </form>
                     <div class="modal-footer">
-                
 
-            </div>
+
+                    </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
 </div>
 
 </div>
-
+     {{!-- partial to display project list--}}
 {{> projects/project-block}}

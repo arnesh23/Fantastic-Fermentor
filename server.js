@@ -12,13 +12,12 @@ var cookieParser = require('cookie-parser');
 var exphbs = require('express-handlebars');
 var customAuthMiddleware = require('./middleware/custom-auth-middleware');
 var app = express();
-var PORT = process.env.PORT || 8090;
+var PORT = process.env.PORT || 8080;
 
 var db = require("./models")
 
 // Sets up the Express app to handle data parsing
-//app.use(express.urlencoded({ extended: true }));
-//app.use(express.json());
+
 
 // Express middleware that allows POSTing data
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -42,18 +41,13 @@ app.set('view engine', 'handlebars');
 var userController = require('./controllers/user-controller');
 var viewsController = require('./controllers/views-controller');
 
-//var myprojects = require ("./controllers/myprojects-controller.js");
-//var taskController =require("./controllers/task-controller.js");
 // hook up our controllers
 app.use(userController);
 app.use(viewsController);
-//app.use(myprojects);
-//app.use(taskController);
+
 // Routes
 // =============================================================
-//require("./routes/post-api-routes")(app);
-//require("./routes/author-api-routes.js")(app);
-//require("./routes/html-routes.js")(app);
+
 require('./controllers/user-controller');
 require('./controllers/views-controller');
 require("./controllers/task-controller.js")(app);

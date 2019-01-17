@@ -1,27 +1,19 @@
-//var express = require("express");
-//var router = express.Router();
 
 var db = require("../models")
 
-// Controller for first web-page
-
-
 
 module.exports = function (app) {
+   
     app.get("/myprojects", function (req, res) {
-
-        console.log(req.user);
+        //if user is not logged in reques to login or register
         if (req.user != null) {
-            // your code here.
-
+            // Get all the projects in projectLog that belong to the loggedin user
             db.projects.findAll({
                 include: [{
                     model: db.projectLog,
                     required: false,
-                },{
+                }, {
                     model: db.User,
-                   
-                  
                 }
                 ], where: { '$projectLogs.userId$': req.user.id }
 
@@ -40,7 +32,5 @@ module.exports = function (app) {
             res.redirect("/login-user");
         }
     })
-
-
 
 }
